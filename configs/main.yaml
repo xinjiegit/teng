@@ -1,0 +1,24 @@
+
+# General configs
+D: [0.1]
+equation: 'heat'
+nb_steps: 10
+nb_iters_per_step: 2
+dt: '0.005'
+integrator: "euler"
+
+# Model configs
+load_model_state_from: 'init_model_state.pickle'
+model_seed: 1234
+
+# Sampler configs
+nb_samples: 65536
+sampler_seed: 4321
+
+# Policy grad configs
+policy_grad_nb_params: 1536
+policy_grad_seed: 8844
+policy_grad2_nb_params: 1024
+policy_grad2_seed: 8848
+
+save_dir: null

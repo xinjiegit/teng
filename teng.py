@@ -15,6 +15,8 @@ config.update("jax_enable_x64", True)
 import jax.numpy as jnp
 
 import numpy as np
+from omegaconf import DictConfig, OmegaConf
+import hydra
 
 from src.model import SimplePDENet3
 from src.sampler import PeriodicQuadratureSampler
@@ -24,43 +26,28 @@ from src.utils import RandomNaturalPolicyGradTDVP
 
 now = datetime.now()
 
+"""
+def get_config(config_file="./src/config/main.yaml"):
+    # Load configurations from the YAML file
+    with open(config_file, "r") as file:
+        config = yaml.safe_load(file)
 
-def get_config():
-    parser = ArgumentParser()
-
-    ### general configs ###
-    parser.add_argument("--D", type=float, nargs='+', default=[1 / 10])
-    parser.add_argument("--equation", type=str, default='heat', choices=['heat', 'allen_cahn', 'burgers'])
-    parser.add_argument("--nb_steps", type=int, default=800)
-    parser.add_argument("--nb_iters_per_step", type=int, default=5)
-    parser.add_argument("--dt", type=str, default='0.005')
-    parser.add_argument("--integrator", type=str, default='heun', choices=['euler', 'heun'])
-    parser.add_argument("--save_dir", type=str, nargs='?', default=None)  # can be emtpy
-
-    ### model configs ###
-    parser.add_argument("--load_model_state_from", type=str, nargs='?', default='init_model_state.pickle')
-    parser.add_argument("--model_seed", type=int, default=1234)
-
-    ### sampler configs ###
-    parser.add_argument("--nb_samples", type=int, default=65536) # we used 262144 in the paper
-    parser.add_argument("--sampler_seed", type=int, default=4321)
-
-    ### policy grad configs ###
-    parser.add_argument("--policy_grad_nb_params", type=int, default=1536)
-    parser.add_argument("--policy_grad_seed", type=int, default=8844)
-    parser.add_argument("--policy_grad2_nb_params", type=int, default=1024)
-    parser.add_argument("--policy_grad2_seed", type=int, default=8848)
-
-    args = parser.parse_args()
-    if args.save_dir is None or args.save_dir.lower() == 'none':
-        args.save_dir = f'./results/run_{now.strftime("%m-%d-%Y-%H-%M-%S")}/'
+    # Handle `save_dir` creation and default path
+    if config.get("save_dir") is None:
+        now = datetime.now()
+        config["save_dir"] = f'./results/run_{now.strftime("%m-%d-%Y-%H-%M-%S")}/'
     else:
-        args.save_dir = "./results/" + args.save_dir
+        config["save_dir"] = "./results/" + config["save_dir"]
 
-    os.makedirs(args.save_dir, exist_ok=True)
-    with open(args.save_dir + '/config.json', 'w') as f:
-        json.dump(args.__dict__, f, indent=2)
-    return args
+    os.makedirs(config["save_dir"], exist_ok=True)
+
+    # Save config to JSON for reference if needed
+    with open(os.path.join(config["save_dir"], 'config.json'), 'w') as f:
+        json.dump(config, f, indent=2)
+
+    return config
+
+"""
 
 
 def write_to_file(file, *items, flush=False):
@@ -93,16 +80,37 @@ def loss_func(var_state, samples, sqrt_weights, u_target):
 
 class CompareWithExact:
     def __init__(self, points_per_dim=512, config=None):
+        if config.equation == 'heat_on_disk':
+            self.points_per_dim = points_per_dim
+            radii = jnp.linspace(0, 1, points_per_dim)
+            angles = jnp.linspace(0, 2 * jnp.pi, points_per_dim, endpoint=False)
+            r_grid, theta_grid = jnp.meshgrid(radii, angles, indexing='ij')
 
-        self.points_per_dim = points_per_dim
-        grid = jnp.linspace(0, 2 * jnp.pi, points_per_dim, endpoint=False)
-        grid2d = jnp.stack(jnp.meshgrid(grid, grid, indexing='ij'), axis=-1).reshape(1, -1, 2)
-        self.xs = grid2d
+            x_grid = r_grid * jnp.cos(theta_grid)
+            y_grid = r_grid * jnp.sin(theta_grid)
+
+            grid2d = jnp.stack((x_grid, y_grid), axis=-1).reshape(1, -1, 2)
+            self.xs = grid2d
+
+            self.exact_solution_dir = "heat_equation_2d_disk_bessel"
+
         if config.equation == 'heat':
+            self.points_per_dim = points_per_dim
+            grid = jnp.linspace(0, 2 * jnp.pi, points_per_dim, endpoint=False)
+            grid2d = jnp.stack(jnp.meshgrid(grid, grid, indexing='ij'), axis=-1).reshape(1, -1, 2)
+            self.xs = grid2d
             self.exact_solution_dir = 'heat_equation_2d_spectral_fourier'
         elif config.equation == 'allen_cahn':
+            self.points_per_dim = points_per_dim
+            grid = jnp.linspace(0, 2 * jnp.pi, points_per_dim, endpoint=False)
+            grid2d = jnp.stack(jnp.meshgrid(grid, grid, indexing='ij'), axis=-1).reshape(1, -1, 2)
+            self.xs = grid2d
             self.exact_solution_dir = 'allen_cahn_equation_2d_spectral_fourier'
         elif config.equation == 'burgers':
+            self.points_per_dim = points_per_dim
+            grid = jnp.linspace(0, 2 * jnp.pi, points_per_dim, endpoint=False)
+            grid2d = jnp.stack(jnp.meshgrid(grid, grid, indexing='ij'), axis=-1).reshape(1, -1, 2)
+            self.xs = grid2d
             self.exact_solution_dir = 'burgers_equation_2d_spectral_fourier'
         else:
             raise NotImplementedError
@@ -253,75 +261,86 @@ def train(config, var_state_new, var_state_old, var_state_temps, pde_operator, p
             save_states(config, var_state_new, var_state_old, var_state_temps, step)
 
 
-def main():
+@hydra.main(version_base=None, config_path="configs", config_name="main")
+def main(params: DictConfig):
     # get config
-    config = get_config()
+    if params.save_dir is None:
+        now = datetime.now()
+        params.save_dir = f"./results/run_{now.strftime('%m-%d-%Y-%H-%M-%S')}/"
+    else:
+        params.save_dir = f"./results/{params.save_dir}"
+
+    os.makedirs(params.save_dir, exist_ok=True)
+
+    # Save the config to JSON (optional)
+    with open(os.path.join(params.save_dir, 'config.json'), 'w') as f:
+        json.dump(OmegaConf.to_container(params, resolve=True), f, indent=2)
 
     # set up logging
     logger = logging.getLogger()
     logging.basicConfig(level=logging.INFO, format='%(message)s')
-    file_handler = logging.FileHandler(os.path.join(config.save_dir, "log.txt"), mode="w")
+    file_handler = logging.FileHandler(os.path.join(params.save_dir, "log.txt"), mode="w")
     logger.addHandler(file_handler)
     start_time = time.perf_counter()
 
     net = SimplePDENet3(width=40, depth=7, period=jnp.pi * 2)
 
     # the var_states can share the same sampler in this case
-    sampler = PeriodicQuadratureSampler(nb_sites=2, nb_samples=config.nb_samples, minvals=0.,
-                                        maxvals=jnp.pi * 2, quad_rule='trapezoid', rand_seed=config.sampler_seed)
+    sampler = PeriodicQuadratureSampler(nb_sites=2, nb_samples=params.nb_samples, minvals=0.,
+                                        maxvals=jnp.pi * 2, quad_rule='trapezoid', rand_seed=params.sampler_seed)
 
     # define the var_state
     # we need to define multiple copies of the var_state for the intermediate results of heun's method
     # the net can be shared because it is just a pure function, which will not cause any issue
 
     var_state_new = SimpleVarStateReal(net=net, system_shape=(2,), sampler=sampler,
-                                       init_seed=config.model_seed)
+                                       init_seed=params.model_seed)
     var_state_old = SimpleVarStateReal(net=net, system_shape=(2,), sampler=sampler,
-                                       init_seed=config.model_seed)
+                                       init_seed=params.model_seed)
     # temporary var_states for storing the intermediate results of heun's method
     var_state_temps = []
-    if config.integrator == 'heun':
+    if params.integrator == 'heun':
         for _ in range(1):
             var_state_temps.append(SimpleVarStateReal(net=net, system_shape=(2,), sampler=sampler,
-                                                      init_seed=config.model_seed))
+                                                      init_seed=params.model_seed))
 
     # load model state if needed
-    if config.load_model_state_from is not None and config.load_model_state_from.lower() != 'none':
+    if params.load_model_state_from is not None and params.load_model_state_from.lower() != 'none':
         # we will only load the state to the new var_state, and the old var_state will be updated by the new var_state
-        var_state_new.load_state(config.load_model_state_from)
+        var_state_new.load_state(params.load_model_state_from)
 
     # define the operator of the pde
     # first parse the input
-    if len(config.D) == 1:
-        diffusion_coefs = jnp.diag(jnp.ones(2) * config.D[0])
-    elif len(config.D) == config.nb_dims:
+    if len(params.D) == 1:
+        diffusion_coefs = jnp.diag(jnp.ones(2) * params.D[0])
+    elif len(params.D) == params.nb_dims:
         diffusion_coefs = jnp.diag(jnp.array(config.D))
-    elif len(config.D) == config.nb_dims ** 2:
+    elif len(params.D) == params.nb_dims ** 2:
         diffusion_coefs = jnp.array(config.D).reshape(2, 2)
     else:
         raise ValueError(
-            f'D can take either 1 argument or {config.nb_dims=} arguments or {config.nb_dims**2=} arguments, but got {len(config.D)=}')
+            f'D can take either 1 argument or {params.nb_dims=} arguments or {params.nb_dims**2=} arguments, but got {len(params.D)=}')
 
     # then define the operator
-    if config.equation == 'heat':
+    if params.equation == 'heat':
         drift_coefs = jnp.zeros(2)
         pde_operator = HeatOperatorNoLog(2, drift_coefs, diffusion_coefs, check_validity=True)
-    elif config.equation == 'allen_cahn':
+    elif params.equation == 'allen_cahn':
         pde_operator = AllenCahnOperator(2, diffusion_coefs, check_validity=True)
-    elif config.equation == 'burgers':
+    elif params.equation == 'burgers':
         pde_operator = BurgersOperator(2, diffusion_coefs, check_validity=True)
     else:
-        raise ValueError(f'Unknown equation: {config.equation}')
+        raise ValueError(f'Unknown equation: {params.equation}')
 
     # define policy grad function
     policy_grad = RandomNaturalPolicyGradTDVP(var_state=var_state_new, ls_solver=None,
-                                              nb_params_to_take=config.policy_grad_nb_params,
-                                              rand_seed=config.policy_grad_seed)
+                                              nb_params_to_take=params.policy_grad_nb_params,
+                                              rand_seed=params.policy_grad_seed)
     policy_grad2 = RandomNaturalPolicyGradTDVP(var_state=var_state_new, ls_solver=None,
-                                               nb_params_to_take=config.policy_grad2_nb_params,
-                                               rand_seed=config.policy_grad2_seed)
+                                               nb_params_to_take=params.policy_grad2_nb_params,
+                                               rand_seed=params.policy_grad2_seed)
 
-    train(config, var_state_new, var_state_old, var_state_temps, pde_operator, policy_grad, policy_grad2)
+    train(params, var_state_new, var_state_old, var_state_temps, pde_operator, policy_grad, policy_grad2)
 
     end_time = time.perf_counter()
     logger.info(f"Total time: {end_time - start_time:.2f} seconds")
