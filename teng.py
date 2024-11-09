@@ -23,31 +23,11 @@ from src.sampler import PeriodicQuadratureSampler
 from src.var_state import SimpleVarStateReal
 from src.operator import HeatOperatorNoLog, AllenCahnOperator, BurgersOperator
 from src.utils import RandomNaturalPolicyGradTDVP
+from scipy.interpolate import griddata
 
 now = datetime.now()
 
-"""
-def get_config(config_file="./src/config/main.yaml"):
-    # Load configurations from the YAML file
-    with open(config_file, "r") as file:
-        config = yaml.safe_load(file)
 
-    # Handle `save_dir` creation and default path
-    if config.get("save_dir") is None:
-        now = datetime.now()
-        config["save_dir"] = f'./results/run_{now.strftime("%m-%d-%Y-%H-%M-%S")}/'
-    else:
-        config["save_dir"] = "./results/" + config["save_dir"]
-
-    os.makedirs(config["save_dir"], exist_ok=True)
-
-    # Save config to JSON for reference if needed
-    with open(os.path.join(config["save_dir"], 'config.json'), 'w') as f:
-        json.dump(config, f, indent=2)
-
-    return config
-
-"""
 
 
 def write_to_file(file, *items, flush=False):
@@ -80,7 +60,8 @@ def loss_func(var_state, samples, sqrt_weights, u_target):
 
 class CompareWithExact:
     def __init__(self, points_per_dim=512, config=None):
-        if config.equation == 'heat_on_disk':
+        self.config = config
+        if config and hasattr(config, 'boundary') and config.boundary:
             self.points_per_dim = points_per_dim
             radii = jnp.linspace(0, 1, points_per_dim)
             angles = jnp.linspace(0, 2 * jnp.pi, points_per_dim, endpoint=False)
@@ -91,29 +72,29 @@ class CompareWithExact:
 
             grid2d = jnp.stack((x_grid, y_grid), axis=-1).reshape(1, -1, 2)
             self.xs = grid2d
-
-            self.exact_solution_dir = "heat_equation_2d_disk_bessel"
-
-        if config.equation == 'heat':
-            self.points_per_dim = points_per_dim
-            grid = jnp.linspace(0, 2 * jnp.pi, points_per_dim, endpoint=False)
-            grid2d = jnp.stack(jnp.meshgrid(grid, grid, indexing='ij'), axis=-1).reshape(1, -1, 2)
-            self.xs = grid2d
-            self.exact_solution_dir = 'heat_equation_2d_spectral_fourier'
-        elif config.equation == 'allen_cahn':
-            self.points_per_dim = points_per_dim
-            grid = jnp.linspace(0, 2 * jnp.pi, points_per_dim, endpoint=False)
-            grid2d = jnp.stack(jnp.meshgrid(grid, grid, indexing='ij'), axis=-1).reshape(1, -1, 2)
-            self.xs = grid2d
-            self.exact_solution_dir = 'allen_cahn_equation_2d_spectral_fourier'
-        elif config.equation == 'burgers':
-            self.points_per_dim = points_per_dim
-            grid = jnp.linspace(0, 2 * jnp.pi, points_per_dim, endpoint=False)
-            grid2d = jnp.stack(jnp.meshgrid(grid, grid, indexing='ij'), axis=-1).reshape(1, -1, 2)
-            self.xs = grid2d
-            self.exact_solution_dir = 'burgers_equation_2d_spectral_fourier'
         else:
-            raise NotImplementedError
+            self.points_per_dim = points_per_dim
+            grid = jnp.linspace(0, 2 * jnp.pi, points_per_dim, endpoint=False)
+            grid2d = jnp.stack(jnp.meshgrid(grid, grid, indexing='ij'), axis=-1).reshape(1, -1, 2)
+            self.xs = grid2d
+
+
+        if config.boundary:
+            if config.equation == "heat":
+                self.exact_solution_dir = "heat_equation_2d_disk_bessel/heat_solution_files"
+            else:
+                raise NotImplementedError
+        else:
+            if config.equation == 'heat':
+                self.exact_solution_dir = 'heat_equation_2d_spectral_fourier'
+            elif config.equation == 'allen_cahn':
+                self.exact_solution_dir = 'allen_cahn_equation_2d_spectral_fourier'
+            elif config.equation == 'burgers':
+                self.exact_solution_dir = 'burgers_equation_2d_spectral_fourier'
+            else:
+                raise NotImplementedError
+
+
         if not os.path.exists(self.exact_solution_dir):
             raise FileNotFoundError(f'{self.exact_solution_dir} does not exist')
 
@@ -124,7 +105,11 @@ class CompareWithExact:
             logging.warning(
                 f'Failed to load exact solution at {T=}, if you are using the provided exact solution, only selected time steps are provided due to file size limitations, {e=}')
             return np.nan, np.nan
-        exact_u = self.ifft(exact_u_hat, max_N=self.points_per_dim).ravel()
+        if self.config.boundary:
+            exact_u = self.polar_to_cartesian(exact_u_hat, max_N=self.points_per_dim).ravel()
+        else:
+            exact_u = self.ifft(exact_u_hat, max_N=self.points_per_dim).ravel()
+
         var_state_u = var_state.evaluate(self.xs).squeeze(0)
         abs_err = jnp.linalg.norm(exact_u - var_state_u)
         rel_err = abs_err / jnp.linalg.norm(exact_u)
@@ -144,6 +129,33 @@ class CompareWithExact:
             x_hat = new_x_hat
         x = jnp.fft.ifft2(x_hat, norm='forward')
         return x
+
+    def polar_to_cartesian(self, u_hat, max_N):
+        """Transform u_hat from polar to Cartesian coordinates."""
+        # Polar grid
+        r = jnp.linspace(0, 1, u_hat.shape[0])
+        theta = jnp.linspace(0, 2 * jnp.pi, u_hat.shape[1])
+        R, Theta = jnp.meshgrid(r, theta, indexing='ij')
+
+        # Cartesian grid
+        x = jnp.linspace(-1, 1, max_N)
+        y = jnp.linspace(-1, 1, max_N)
+        X, Y = jnp.meshgrid(x, y, indexing='ij')
+
+        # Convert Cartesian grid to polar coordinates
+        R_cartesian = jnp.sqrt(X ** 2 + Y ** 2)
+        Theta_cartesian = jnp.arctan2(Y, X) % (2 * jnp.pi)
+
+        # Flatten polar and Cartesian grids for interpolation
+        polar_points = jnp.column_stack((R.ravel(), Theta.ravel()))
+        cartesian_points = jnp.column_stack((R_cartesian.ravel(), Theta_cartesian.ravel()))
+        u_hat_flat = u_hat.ravel()
+
+        # Interpolate onto the Cartesian grid
+        u_cartesian = griddata(polar_points, u_hat_flat, cartesian_points, method='linear', fill_value=0)
+
+        # Reshape back to grid form
+        return u_cartesian.reshape(max_N, max_N)
 
 
 def euler_step(config, fiters, T, step, dt, var_state_new, var_state_old, var_state_temps, pde_operator, policy_grad, policy_grad2):

@@ -2,7 +2,7 @@
 # General configs
 D: [0.1]
 equation: 'heat'
-nb_steps: 10
+nb_steps: 5
 nb_iters_per_step: 2
 dt: '0.005'
 integrator: "euler"
@@ -22,3 +22,5 @@ policy_grad2_nb_params: 1024
 policy_grad2_seed: 8848
 
 save_dir: null
+
+boundary: True
