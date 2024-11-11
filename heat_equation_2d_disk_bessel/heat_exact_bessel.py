@@ -12,7 +12,7 @@ M = 10                      # Number of time steps
 dt = T_final / M            # Time step size
 
 # Radial and angular grids
-r_vals = np.linspace(0, 1, N_r)
+r_vals = np.linspace(1/N_r, 1, N_r)
 theta_vals = np.linspace(0, 2 * np.pi, N_theta, endpoint=False)
 
 # Bessel zeros
@@ -68,7 +68,7 @@ for time_step in range(M):
         Zmn, lambdamn = Z_mn(m, n, r_vals[:, None], theta_vals)
         u_t += c * Zmn * np.exp(-alpha * lambdamn**2 * t)
 
-    filename = os.path.join(output_dir, f"heat_solution_T{t:.1f}.npy")
+    filename = os.path.join(output_dir, f"T_{t:.3f}".rstrip("0").rstrip(".") + ".npy")
     np.save(filename, u_t)
     print(f"Saved {filename}")
 

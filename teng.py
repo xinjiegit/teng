@@ -19,11 +19,13 @@ from omegaconf import DictConfig, OmegaConf
 import hydra
 
 from src.model import SimplePDENet3
+from src.sampler.quadrature_sampler import DiskSampler, CircleSampler
 from src.sampler import PeriodicQuadratureSampler
 from src.var_state import SimpleVarStateReal
 from src.operator import HeatOperatorNoLog, AllenCahnOperator, BurgersOperator
 from src.utils import RandomNaturalPolicyGradTDVP
-from scipy.interpolate import griddata
+from scipy.interpolate import RegularGridInterpolator
+
 
 now = datetime.now()
 
@@ -63,7 +65,7 @@ class CompareWithExact:
         self.config = config
         if config and hasattr(config, 'boundary') and config.boundary:
             self.points_per_dim = points_per_dim
-            radii = jnp.linspace(0, 1, points_per_dim)
+            radii = jnp.linspace(1/points_per_dim, 1, points_per_dim)
             angles = jnp.linspace(0, 2 * jnp.pi, points_per_dim, endpoint=False)
             r_grid, theta_grid = jnp.meshgrid(radii, angles, indexing='ij')
 
@@ -106,7 +108,7 @@ class CompareWithExact:
                 f'Failed to load exact solution at {T=}, if you are using the provided exact solution, only selected time steps are provided due to file size limitations, {e=}')
             return np.nan, np.nan
         if self.config.boundary:
-            exact_u = self.polar_to_cartesian(exact_u_hat, max_N=self.points_per_dim).ravel()
+            exact_u = self.resample_and_convert_to_cartesian(exact_u_hat, max_N=self.points_per_dim).ravel()
         else:
             exact_u = self.ifft(exact_u_hat, max_N=self.points_per_dim).ravel()
 
@@ -130,37 +132,47 @@ class CompareWithExact:
         x = jnp.fft.ifft2(x_hat, norm='forward')
         return x
 
-    def polar_to_cartesian(self, u_hat, max_N):
-        """Transform u_hat from polar to Cartesian coordinates."""
-        # Polar grid
-        r = jnp.linspace(0, 1, u_hat.shape[0])
-        theta = jnp.linspace(0, 2 * jnp.pi, u_hat.shape[1])
-        R, Theta = jnp.meshgrid(r, theta, indexing='ij')
+    def resample_and_convert_to_cartesian(self, u_hat, max_N):
+        """Resample u_hat to match max_N resolution and convert to Cartesian coordinates within the unit disk."""
+        # Original polar grid
+        r_original = jnp.linspace(1 / u_hat.shape[0], 1, u_hat.shape[0])  # Avoid r=0 by starting slightly above zero
+        theta_original = jnp.linspace(0, 2 * jnp.pi, u_hat.shape[1], endpoint=False)
 
-        # Cartesian grid
-        x = jnp.linspace(-1, 1, max_N)
-        y = jnp.linspace(-1, 1, max_N)
-        X, Y = jnp.meshgrid(x, y, indexing='ij')
+        # Define the interpolator on the original polar grid
+        interpolator = RegularGridInterpolator((r_original, theta_original), u_hat, method='linear', bounds_error=False,
+                                               fill_value=0)
 
-        # Convert Cartesian grid to polar coordinates
-        R_cartesian = jnp.sqrt(X ** 2 + Y ** 2)
-        Theta_cartesian = jnp.arctan2(Y, X) % (2 * jnp.pi)
+        # Resampled polar grid with max_N points in each dimension
+        r_resampled = jnp.linspace(1 / max_N, 1, max_N)  # New radial grid with max_N points
+        theta_resampled = jnp.linspace(0, 2 * jnp.pi, max_N, endpoint=False)  # New angular grid with max_N points
+        R_resampled, Theta_resampled = jnp.meshgrid(r_resampled, theta_resampled, indexing='ij')
 
-        # Flatten polar and Cartesian grids for interpolation
-        polar_points = jnp.column_stack((R.ravel(), Theta.ravel()))
-        cartesian_points = jnp.column_stack((R_cartesian.ravel(), Theta_cartesian.ravel()))
-        u_hat_flat = u_hat.ravel()
+        # Prepare points for interpolation in (r, theta) format
+        resampled_polar_points = jnp.column_stack((R_resampled.ravel(), Theta_resampled.ravel()))
 
-        # Interpolate onto the Cartesian grid
-        u_cartesian = griddata(polar_points, u_hat_flat, cartesian_points, method='linear', fill_value=0)
+        # Perform interpolation in polar coordinates
+        u_hat_resampled_flat = interpolator(resampled_polar_points)
+        u_hat_resampled = u_hat_resampled_flat.reshape(max_N, max_N)
 
-        # Reshape back to grid form
-        return u_cartesian.reshape(max_N, max_N)
+        # Convert the resampled polar grid to Cartesian coordinates
+        X_resampled = R_resampled * jnp.cos(Theta_resampled)
+        Y_resampled = R_resampled * jnp.sin(Theta_resampled)
+        cartesian_points_resampled = jnp.column_stack((X_resampled.ravel(), Y_resampled.ravel()))
+
+        return u_hat_resampled
+
+
+def boundary_target_func(boundary_samples):
+    # Assume the target is a constant, e.g., zero on the boundary
+    return jnp.zeros(boundary_samples.shape[0])
 
 
 def euler_step(config, fiters, T, step, dt, var_state_new, var_state_old, var_state_temps, pde_operator, policy_grad, policy_grad2):
     var_state_old.set_state(var_state_new.get_state())
     samples, _, sqrt_weights = var_state_old.sampler.sample(start=0)
+    if config.boundary:
+        boundary_samples, _, boundary_sqrt_weights = var_state_old.boundary_sampler.sample(start=0)
+        boundary_target = boundary_target_func(boundary_samples)
     final_losses = []
 
     # first train var_state_temp0
@@ -169,8 +181,18 @@ def euler_step(config, fiters, T, step, dt, var_state_new, var_state_old, var_st
     u_old = var_state_old.evaluate(samples)
     u_old_dot = pde_operator(var_state_old, samples, u_old, compile=True)
     u_target = u_old + u_old_dot * float(dt)
+
     for iter in range(config.nb_iters_per_step + 2):
         reward, loss = loss_func(var_state_new, samples, sqrt_weights, u_target)
+        if config.boundary:
+            boundary_reward, boundary_loss = loss_func(var_state_new, boundary_samples, boundary_sqrt_weights,
+                                                       boundary_target)
+
+            total_loss = loss + config.boundary_loss_weight * boundary_loss
+            boundary_reward = jnp.mean(boundary_reward)  # or jnp.sum(boundary_reward)
+            total_reward = reward + config.boundary_loss_weight * boundary_reward
+
+
         update, info = (policy_grad if iter == 0 else policy_grad2)(samples=samples, sqrt_weights=sqrt_weights,
                                                                     rewards=reward, var_state=var_state_new,
                                                                     resample_params=True)
@@ -298,22 +320,27 @@ def main(params: DictConfig):
     net = SimplePDENet3(width=40, depth=7, period=jnp.pi * 2)
 
     # the var_states can share the same sampler in this case
-    sampler = PeriodicQuadratureSampler(nb_sites=2, nb_samples=params.nb_samples, minvals=0.,
-                                        maxvals=jnp.pi * 2, quad_rule='trapezoid', rand_seed=params.sampler_seed)
+    if params.boundary:
+        sampler = DiskSampler(nb_samples=params.nb_samples, radius=1.0, quad_rule=None, rand_seed=params.sampler_seed)
+        boundary_sampler = CircleSampler(nb_samples=params.nb_samples_boundary, radius=1.0, quad_rule=None, rand_seed=params.sampler_seed)
+    else:
+        sampler = PeriodicQuadratureSampler(nb_sites=2, nb_samples=params.nb_samples, minvals=0.,
+                                            maxvals=jnp.pi * 2, quad_rule='trapezoid', rand_seed=params.sampler_seed)
+        boundary_sampler=None
 
     # define the var_state
     # we need to define multiple copies of the var_state for the intermediate results of heun's method
     # the net can be shared because it is just a pure function, which will not cause any issue
 
-    var_state_new = SimpleVarStateReal(net=net, system_shape=(2,), sampler=sampler,
+    var_state_new = SimpleVarStateReal(net=net, system_shape=(2,), sampler=sampler, boundary_sampler=boundary_sampler,
                                        init_seed=params.model_seed)
-    var_state_old = SimpleVarStateReal(net=net, system_shape=(2,), sampler=sampler,
+    var_state_old = SimpleVarStateReal(net=net, system_shape=(2,), sampler=sampler, boundary_sampler=boundary_sampler,
                                        init_seed=params.model_seed)
     # temporary var_states for storing the intermediate results of heun's method
     var_state_temps = []
     if params.integrator == 'heun':
         for _ in range(1):
-            var_state_temps.append(SimpleVarStateReal(net=net, system_shape=(2,), sampler=sampler,
+            var_state_temps.append(SimpleVarStateReal(net=net, system_shape=(2,), sampler=sampler, boundary_sampler=boundary_sampler,
                                                       init_seed=params.model_seed))
 
     # load model state if needed

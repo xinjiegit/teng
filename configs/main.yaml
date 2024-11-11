@@ -4,7 +4,7 @@ D: [0.1]
 equation: 'heat'
 nb_steps: 5
 nb_iters_per_step: 2
-dt: '0.005'
+dt: '0.2'
 integrator: "euler"
 
 # Model configs
@@ -12,7 +12,8 @@ load_model_state_from: 'init_model_state.pickle'
 model_seed: 1234
 
 # Sampler configs
-nb_samples: 65536
+nb_samples: 400
+nb_samples_boundary: 20
 sampler_seed: 4321
 
 # Policy grad configs
@@ -24,3 +25,4 @@ policy_grad2_seed: 8848
 save_dir: null
 
 boundary: True
+boundary_loss_weight: 1
