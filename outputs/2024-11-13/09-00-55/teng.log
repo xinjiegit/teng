@@ -1,0 +1,90 @@
+[2024-11-13 09:00:56,123][jax._src.xla_bridge][INFO] - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2024-11-13 09:00:56,123][jax._src.xla_bridge][INFO] - Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+[2024-11-13 09:01:00,324][root][INFO] - step=-1, T=Decimal('0'), err=(6.501884761416838, 1.0126811102426405), loss=(0, 0), training_time=0
+[2024-11-13 09:01:03,421][root][INFO] - step=0, T=Decimal('0.2'), stage=0, iter=0, loss=0.01682403348157394, info=(1.8881540141925656e-19,)
+[2024-11-13 09:01:05,006][root][INFO] - step=0, T=Decimal('0.2'), stage=0, iter=1, loss=12569940066.8815, info=(5532609247.036144,)
+[2024-11-13 09:01:05,687][root][INFO] - step=0, T=Decimal('0.2'), stage=0, iter=2, loss=3764014579.040023, info=(5349608782.223275,)
+[2024-11-13 09:01:06,378][root][INFO] - step=0, T=Decimal('0.2'), stage=0, iter=3, loss=3463001730.8666015, info=(6889840282.9732485,)
+[2024-11-13 09:01:07,052][root][INFO] - step=0, T=Decimal('0.2'), stage=0, iter=4, loss=4227988637.73798, info=(4816789891.516022,)
+[2024-11-13 09:01:07,738][root][INFO] - step=0, T=Decimal('0.2'), stage=0, iter=5, loss=2847051382.774711, info=(2887638390.397253,)
+[2024-11-13 09:01:07,892][root][INFO] - step=0, T=Decimal('0.2'), stage=0, loss=1443819195.1986327
+[2024-11-13 09:01:07,916][root][INFO] - step=0, T=Decimal('0.2'), err=(350636.1119288732, 63426.927074471576), loss=[1443819195.1986327], training_time=7.567359299166128
+[2024-11-13 09:01:07,965][root][INFO] - step=1, T=Decimal('0.4'), stage=0, iter=0, loss=219517538.20731688, info=(192256423.79988092,)
+[2024-11-13 09:01:08,053][root][INFO] - step=1, T=Decimal('0.4'), stage=0, iter=1, loss=168953706.80517334, info=(269375773.7557197,)
+[2024-11-13 09:01:08,080][root][INFO] - step=1, T=Decimal('0.4'), stage=0, iter=2, loss=190411340.69029683, info=(309777459.8551169,)
+[2024-11-13 09:01:08,105][root][INFO] - step=1, T=Decimal('0.4'), stage=0, iter=3, loss=197225467.58285326, info=(354466089.7998686,)
+[2024-11-13 09:01:08,128][root][INFO] - step=1, T=Decimal('0.4'), stage=0, iter=4, loss=213946955.1267361, info=(329853798.4910908,)
+[2024-11-13 09:01:08,159][root][INFO] - step=1, T=Decimal('0.4'), stage=0, iter=5, loss=191629618.32356992, info=(316272669.7891054,)
+[2024-11-13 09:01:08,161][root][INFO] - step=1, T=Decimal('0.4'), stage=0, loss=158136334.89455718
+[2024-11-13 09:01:08,186][root][INFO] - step=1, T=Decimal('0.4'), err=(253369.5988887479, 51546.42426535587), loss=[158136334.89455718], training_time=7.810647014062852
+[2024-11-13 09:01:08,232][root][INFO] - step=2, T=Decimal('0.6'), stage=0, iter=0, loss=19914505.985816907, info=(39788561.451403566,)
+[2024-11-13 09:01:08,250][root][INFO] - step=2, T=Decimal('0.6'), stage=0, iter=1, loss=39778804.13468194, info=(79306679.3103047,)
+[2024-11-13 09:01:08,270][root][INFO] - step=2, T=Decimal('0.6'), stage=0, iter=2, loss=59470825.61335458, info=(117928396.0144715,)
+[2024-11-13 09:01:08,289][root][INFO] - step=2, T=Decimal('0.6'), stage=0, iter=3, loss=78601571.17489764, info=(146776477.48751774,)
+[2024-11-13 09:01:08,312][root][INFO] - step=2, T=Decimal('0.6'), stage=0, iter=4, loss=91614925.44323581, info=(84802335.25178407,)
+[2024-11-13 09:01:08,337][root][INFO] - step=2, T=Decimal('0.6'), stage=0, iter=5, loss=35906136390.11445, info=(55020750866.8963,)
+[2024-11-13 09:01:08,340][root][INFO] - step=2, T=Decimal('0.6'), stage=0, loss=22667539154.430412
+[2024-11-13 09:01:08,360][root][INFO] - step=2, T=Decimal('0.6'), err=(895657.3601736249, 204109.32354977416), loss=[22667539154.430412], training_time=7.964601602172479
+[2024-11-13 09:01:08,405][root][INFO] - step=3, T=Decimal('0.8'), stage=0, iter=0, loss=3648020592.8123035, info=(2880878977.6198697,)
+[2024-11-13 09:01:08,425][root][INFO] - step=3, T=Decimal('0.8'), stage=0, iter=1, loss=2355207922.2338533, info=(3643723256.135716,)
+[2024-11-13 09:01:08,451][root][INFO] - step=3, T=Decimal('0.8'), stage=0, iter=2, loss=2428300743.73929, info=(2804086078.7987466,)
+[2024-11-13 09:01:08,471][root][INFO] - step=3, T=Decimal('0.8'), stage=0, iter=3, loss=1679090779.5696878, info=(2744035518.9963646,)
+[2024-11-13 09:01:08,494][root][INFO] - step=3, T=Decimal('0.8'), stage=0, iter=4, loss=1561128260.7383273, info=(2698676384.4996853,)
+[2024-11-13 09:01:08,521][root][INFO] - step=3, T=Decimal('0.8'), stage=0, iter=5, loss=1496072089.886572, info=(2962368431.3611608,)
+[2024-11-13 09:01:08,524][root][INFO] - step=3, T=Decimal('0.8'), stage=0, loss=1481184215.680585
+[2024-11-13 09:01:08,543][root][INFO] - step=3, T=Decimal('0.8'), err=(509782.0442043586, 130169.09087348806), loss=[1481184215.680585], training_time=8.128027830040082
+[2024-11-13 09:01:08,587][root][INFO] - step=4, T=Decimal('1.0'), stage=0, iter=0, loss=144848681.3287021, info=(235473378.5443308,)
+[2024-11-13 09:01:08,607][root][INFO] - step=4, T=Decimal('1.0'), stage=0, iter=1, loss=231634090.12445545, info=(439885565.97695315,)
+[2024-11-13 09:01:08,627][root][INFO] - step=4, T=Decimal('1.0'), stage=0, iter=2, loss=327144197.7953752, info=(466207867.840314,)
+[2024-11-13 09:01:08,648][root][INFO] - step=4, T=Decimal('1.0'), stage=0, iter=3, loss=306392870.6383332, info=(608271087.1428399,)
+[2024-11-13 09:01:08,669][root][INFO] - step=4, T=Decimal('1.0'), stage=0, iter=4, loss=376416727.04349935, info=(641164969.7008318,)
+[2024-11-13 09:01:08,694][root][INFO] - step=4, T=Decimal('1.0'), stage=0, iter=5, loss=381097659.21405745, info=(741060813.4595274,)
+[2024-11-13 09:01:08,697][root][INFO] - step=4, T=Decimal('1.0'), stage=0, loss=370530406.729767
+[2024-11-13 09:01:08,697][root][WARNING] - Failed to load exact solution at T=Decimal('1.0'), if you are using the provided exact solution, only selected time steps are provided due to file size limitations, e=FileNotFoundError(2, 'No such file or directory')
+[2024-11-13 09:01:08,697][root][INFO] - step=4, T=Decimal('1.0'), err=(nan, nan), loss=[370530406.729767], training_time=8.28130959905684
+[2024-11-13 09:01:08,742][root][INFO] - step=5, T=Decimal('1.2'), stage=0, iter=0, loss=58908418.5079669, info=(108091404.36394192,)
+[2024-11-13 09:01:08,763][root][INFO] - step=5, T=Decimal('1.2'), stage=0, iter=1, loss=106819795.20956174, info=(163277112.13554487,)
+[2024-11-13 09:01:08,786][root][INFO] - step=5, T=Decimal('1.2'), stage=0, iter=2, loss=121723231.0405955, info=(224473395.87909544,)
+[2024-11-13 09:01:08,809][root][INFO] - step=5, T=Decimal('1.2'), stage=0, iter=3, loss=149040253.97636944, info=(190122416.2730005,)
+[2024-11-13 09:01:08,830][root][INFO] - step=5, T=Decimal('1.2'), stage=0, iter=4, loss=117464960.1846606, info=(218368807.21120697,)
+[2024-11-13 09:01:08,846][root][INFO] - step=5, T=Decimal('1.2'), stage=0, iter=5, loss=129649948.53874129, info=(252330369.0063705,)
+[2024-11-13 09:01:08,848][root][INFO] - step=5, T=Decimal('1.2'), stage=0, loss=126165184.50318816
+[2024-11-13 09:01:08,849][root][WARNING] - Failed to load exact solution at T=Decimal('1.2'), if you are using the provided exact solution, only selected time steps are provided due to file size limitations, e=FileNotFoundError(2, 'No such file or directory')
+[2024-11-13 09:01:08,849][root][INFO] - step=5, T=Decimal('1.2'), err=(nan, nan), loss=[126165184.50318816], training_time=8.431896695168689
+[2024-11-13 09:01:08,894][root][INFO] - step=6, T=Decimal('1.4'), stage=0, iter=0, loss=19801036.165838465, info=(21846242.6175027,)
+[2024-11-13 09:01:08,916][root][INFO] - step=6, T=Decimal('1.4'), stage=0, iter=1, loss=20474220.305247165, info=(26571052.447607614,)
+[2024-11-13 09:01:08,934][root][INFO] - step=6, T=Decimal('1.4'), stage=0, iter=2, loss=18970541.84665908, info=(36342237.66522526,)
+[2024-11-13 09:01:08,956][root][INFO] - step=6, T=Decimal('1.4'), stage=0, iter=3, loss=23504680.273845274, info=(45551286.20082801,)
+[2024-11-13 09:01:08,979][root][INFO] - step=6, T=Decimal('1.4'), stage=0, iter=4, loss=27897088.96631815, info=(54190911.69136917,)
+[2024-11-13 09:01:09,003][root][INFO] - step=6, T=Decimal('1.4'), stage=0, iter=5, loss=32041398.15941829, info=(63815481.78242216,)
+[2024-11-13 09:01:09,006][root][INFO] - step=6, T=Decimal('1.4'), stage=0, loss=31907740.89121142
+[2024-11-13 09:01:09,006][root][WARNING] - Failed to load exact solution at T=Decimal('1.4'), if you are using the provided exact solution, only selected time steps are provided due to file size limitations, e=FileNotFoundError(2, 'No such file or directory')
+[2024-11-13 09:01:09,006][root][INFO] - step=6, T=Decimal('1.4'), err=(nan, nan), loss=[31907740.89121142], training_time=8.58892536512576
+[2024-11-13 09:01:09,051][root][INFO] - step=7, T=Decimal('1.6'), stage=0, iter=0, loss=4918243.017146154, info=(9411429.347164463,)
+[2024-11-13 09:01:09,073][root][INFO] - step=7, T=Decimal('1.6'), stage=0, iter=1, loss=9350232.498827666, info=(15794097.240335567,)
+[2024-11-13 09:01:09,096][root][INFO] - step=7, T=Decimal('1.6'), stage=0, iter=2, loss=11687622.590585453, info=(18520548.316104636,)
+[2024-11-13 09:01:09,117][root][INFO] - step=7, T=Decimal('1.6'), stage=0, iter=3, loss=12086600.541815886, info=(23402409.678101093,)
+[2024-11-13 09:01:09,131][root][INFO] - step=7, T=Decimal('1.6'), stage=0, iter=4, loss=14416141.659277864, info=(28824132.864233196,)
+[2024-11-13 09:01:09,161][root][INFO] - step=7, T=Decimal('1.6'), stage=0, iter=5, loss=17125338.506949022, info=(30762531.881167103,)
+[2024-11-13 09:01:09,164][root][INFO] - step=7, T=Decimal('1.6'), stage=0, loss=15381265.940588992
+[2024-11-13 09:01:09,164][root][WARNING] - Failed to load exact solution at T=Decimal('1.6'), if you are using the provided exact solution, only selected time steps are provided due to file size limitations, e=FileNotFoundError(2, 'No such file or directory')
+[2024-11-13 09:01:09,164][root][INFO] - step=7, T=Decimal('1.6'), err=(nan, nan), loss=[15381265.940588992], training_time=8.745864582015201
+[2024-11-13 09:01:09,208][root][INFO] - step=8, T=Decimal('1.8'), stage=0, iter=0, loss=2405221.2901009726, info=(4803645.560902904,)
+[2024-11-13 09:01:09,229][root][INFO] - step=8, T=Decimal('1.8'), stage=0, iter=1, loss=4802235.109860372, info=(9577356.928728767,)
+[2024-11-13 09:01:09,252][root][INFO] - step=8, T=Decimal('1.8'), stage=0, iter=2, loss=7178969.989229899, info=(13974862.117663816,)
+[2024-11-13 09:01:09,274][root][INFO] - step=8, T=Decimal('1.8'), stage=0, iter=3, loss=9301525.26104924, info=(17353684.414935656,)
+[2024-11-13 09:01:09,298][root][INFO] - step=8, T=Decimal('1.8'), stage=0, iter=4, loss=10819555.913489036, info=(18429349.007183764,)
+[2024-11-13 09:01:09,322][root][INFO] - step=8, T=Decimal('1.8'), stage=0, iter=5, loss=10997942.526591405, info=(21691711.30790346,)
+[2024-11-13 09:01:09,325][root][INFO] - step=8, T=Decimal('1.8'), stage=0, loss=10845855.653956726
+[2024-11-13 09:01:09,325][root][WARNING] - Failed to load exact solution at T=Decimal('1.8'), if you are using the provided exact solution, only selected time steps are provided due to file size limitations, e=FileNotFoundError(2, 'No such file or directory')
+[2024-11-13 09:01:09,326][root][INFO] - step=8, T=Decimal('1.8'), err=(nan, nan), loss=[10845855.653956726], training_time=8.906890048878267
+[2024-11-13 09:01:09,370][root][INFO] - step=9, T=Decimal('2.0'), stage=0, iter=0, loss=1760432.7470636002, info=(3458244.4455032535,)
+[2024-11-13 09:01:09,389][root][INFO] - step=9, T=Decimal('2.0'), stage=0, iter=1, loss=3451558.1926437626, info=(6803905.9751968635,)
+[2024-11-13 09:01:09,409][root][INFO] - step=9, T=Decimal('2.0'), stage=0, iter=2, loss=5096614.272770186, info=(9741105.839603279,)
+[2024-11-13 09:01:09,434][root][INFO] - step=9, T=Decimal('2.0'), stage=0, iter=3, loss=6487093.821908146, info=(12603574.254257804,)
+[2024-11-13 09:01:09,454][root][INFO] - step=9, T=Decimal('2.0'), stage=0, iter=4, loss=7869680.784304529, info=(14493098.513119705,)
+[2024-11-13 09:01:09,480][root][INFO] - step=9, T=Decimal('2.0'), stage=0, iter=5, loss=8676358.934667816, info=(16711930.687860675,)
+[2024-11-13 09:01:09,482][root][INFO] - step=9, T=Decimal('2.0'), stage=0, loss=8355965.343931671
+[2024-11-13 09:01:09,483][root][WARNING] - Failed to load exact solution at T=Decimal('2.0'), if you are using the provided exact solution, only selected time steps are provided due to file size limitations, e=FileNotFoundError(2, 'No such file or directory')
+[2024-11-13 09:01:09,483][root][INFO] - step=9, T=Decimal('2.0'), err=(nan, nan), loss=[8355965.343931671], training_time=9.063449995825067
+[2024-11-13 09:01:09,483][root][INFO] - Total time: 13.81 seconds

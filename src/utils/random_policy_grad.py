@@ -43,7 +43,7 @@ class RandomNaturalPolicyGradTDVPPure:
             return value
 
         jac = jax.vmap(jax.grad(net_apply_func), (None, 0))(curr_params, samples.squeeze(0))[..., params_to_take] * \
-              sqrt_weights[0, ..., None]
+sqrt_weights[0, ..., None]
 
         rewards = rewards * sqrt_weights
 

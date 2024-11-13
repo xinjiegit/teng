@@ -7,7 +7,7 @@ import os
 alpha = 0.1                 # Diffusion coefficient
 N_r = 20                   # Number of radial grid points
 N_theta = 20               # Number of angular grid points
-T_final = 1.0               # Final time
+T_final = 2.0               # Final time
 M = 1000                      # Number of time steps
 dt = T_final / M            # Time step size
 

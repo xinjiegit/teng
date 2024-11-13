@@ -173,6 +173,7 @@ def euler_step(config, fiters, T, step, dt, var_state_new, var_state_old, var_st
     if config.boundary:
         boundary_samples, _, boundary_sqrt_weights = var_state_old.boundary_sampler.sample(start=0)
         boundary_target = boundary_target_func(boundary_samples)
+
     final_losses = []
 
     # first train var_state_temp0
@@ -181,18 +182,34 @@ def euler_step(config, fiters, T, step, dt, var_state_new, var_state_old, var_st
     u_old = var_state_old.evaluate(samples)
     u_old_dot = pde_operator(var_state_old, samples, u_old, compile=True)
     u_target = u_old + u_old_dot * float(dt)
-
+    
     for iter in range(config.nb_iters_per_step + 2):
         reward, loss = loss_func(var_state_new, samples, sqrt_weights, u_target)
+       
+     # update the boundary loss and reward
         if config.boundary:
+            dx = jnp.zeros((1, 20)) # set dx =0 at initial time
+            u_target = jnp.concatenate([u_target, dx], axis=1)
+            
             boundary_reward, boundary_loss = loss_func(var_state_new, boundary_samples, boundary_sqrt_weights,
                                                        boundary_target)
-
             loss = loss + config.boundary_loss_weight * boundary_loss
-            boundary_reward = jnp.mean(boundary_reward)  # or jnp.sum(boundary_reward)
-            reward = reward + config.boundary_loss_weight * boundary_reward
+            #boundary_reward = jnp.mean(boundary_reward)  # or jnp.sum(boundary_reward)
+            #reward = reward + config.boundary_loss_weight * boundary_reward
+            
+            # print(boundary_reward.shape)
+            # print(reward.shape)
 
- # update the boundary loss and reward
+            # print(boundary_samples.shape)
+            # print(samples.shape)
+
+            # print(boundary_sqrt_weights.shape)
+            # print(sqrt_weights.shape)
+
+            samples = jnp.concatenate([samples, boundary_samples], axis=1)
+            sqrt_weights = jnp.concatenate([sqrt_weights, boundary_sqrt_weights], axis=1)
+            reward = jnp.concatenate([reward, boundary_reward], axis=1)
+            
         update, info = (policy_grad if iter == 0 else policy_grad2)(samples=samples, sqrt_weights=sqrt_weights,
                                                                     rewards=reward, var_state=var_state_new,
                                                                     resample_params=True)

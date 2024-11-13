@@ -1,0 +1,11 @@
+Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+step=-1, T=Decimal('0'), err=(6.501884761416838, 1.0126811102426405), loss=(0, 0), training_time=0
+step=0, T=Decimal('0.005'), stage=0, iter=0, loss=0.016808218459617653, info=(1.7055352429515373e-19,)
+step=0, T=Decimal('0.005'), stage=0, iter=1, loss=8289155260.970163, info=(2788571338.1259847,)
+step=0, T=Decimal('0.005'), stage=0, iter=2, loss=5295374688.595795, info=(3627677797.523094,)
+step=0, T=Decimal('0.005'), stage=0, iter=3, loss=2135151273.7802424, info=(4222207836.2441993,)
+step=0, T=Decimal('0.005'), stage=0, iter=4, loss=2429442043.7184715, info=(1493099941.2719402,)
+step=0, T=Decimal('0.005'), stage=0, iter=5, loss=875494478.8914989, info=(1075916335.7210395,)
+step=0, T=Decimal('0.005'), stage=0, loss=537958167.8605249
+step=0, T=Decimal('0.005'), err=(315917.8498970217, 49444.16078274356), loss=[537958167.8605249], training_time=7.525864784838632
