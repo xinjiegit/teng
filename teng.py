@@ -188,19 +188,21 @@ def euler_step(config, fiters, T, step, dt, var_state_new, var_state_old, var_st
             boundary_reward, boundary_loss = loss_func(var_state_new, boundary_samples, boundary_sqrt_weights,
                                                        boundary_target)
 
-            total_loss = loss + config.boundary_loss_weight * boundary_loss
+            loss = loss + config.boundary_loss_weight * boundary_loss
             boundary_reward = jnp.mean(boundary_reward)  # or jnp.sum(boundary_reward)
-            total_reward = reward + config.boundary_loss_weight * boundary_reward
+            reward = reward + config.boundary_loss_weight * boundary_reward
 
-
+ # update the boundary loss and reward
         update, info = (policy_grad if iter == 0 else policy_grad2)(samples=samples, sqrt_weights=sqrt_weights,
                                                                     rewards=reward, var_state=var_state_new,
                                                                     resample_params=True)
+       
         info = tuple(each_info.item() if isinstance(each_info, jnp.ndarray) else each_info for each_info in info)
         var_state_new.update_parameters(update)
         loss = loss.squeeze().item()
         logging.info(f'{step=}, {T=}, {stage=}, {iter=}, {loss=}, {info=}')
         write_to_file(fiters, T, step, stage, iter, loss, *info, flush=False)
+
     loss = loss_func(var_state_new, samples, sqrt_weights, u_target)[1].squeeze().item()
     logging.info(f'{step=}, {T=}, {stage=}, {loss=}')
     final_losses.append(loss)
@@ -375,6 +377,7 @@ def main(params: DictConfig):
     policy_grad = RandomNaturalPolicyGradTDVP(var_state=var_state_new, ls_solver=None,
                                               nb_params_to_take=params.policy_grad_nb_params,
                                               rand_seed=params.policy_grad_seed)
+    
     policy_grad2 = RandomNaturalPolicyGradTDVP(var_state=var_state_new, ls_solver=None,
                                                nb_params_to_take=params.policy_grad2_nb_params,
                                                rand_seed=params.policy_grad2_seed)

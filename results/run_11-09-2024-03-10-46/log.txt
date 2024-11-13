@@ -1,0 +1,34 @@
+Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+step=-1, T=Decimal('0'), err=(7.025029596500323e-07, 9.521866619107015e-08), loss=(0, 0), training_time=0
+step=0, T=Decimal('0.005'), stage=0, iter=0, loss=1.73650989971677e-06, info=(3.2285988991871343e-19,)
+step=0, T=Decimal('0.005'), stage=0, iter=1, loss=3.6776935721091815e-10, info=(2.62971640842483e-19,)
+step=0, T=Decimal('0.005'), stage=0, iter=2, loss=1.164793403334036e-12, info=(2.514003098480995e-19,)
+step=0, T=Decimal('0.005'), stage=0, iter=3, loss=5.369886291989603e-13, info=(2.4061181222104547e-19,)
+step=0, T=Decimal('0.005'), stage=0, loss=1.849870490512452e-12
+step=0, T=Decimal('0.005'), err=(2.8216875530758592e-05, 3.828958438672493e-06), loss=[1.849870490512452e-12], training_time=5.013116545043886
+step=1, T=Decimal('0.010'), stage=0, iter=0, loss=1.7242334840678402e-06, info=(3.0626209533759276e-19,)
+step=1, T=Decimal('0.010'), stage=0, iter=1, loss=3.0038655683390263e-10, info=(2.4176745476444918e-19,)
+step=1, T=Decimal('0.010'), stage=0, iter=2, loss=1.7343664630708419e-12, info=(2.2626606461277043e-19,)
+step=1, T=Decimal('0.010'), stage=0, iter=3, loss=4.695992124923609e-12, info=(2.128157484329371e-19,)
+step=1, T=Decimal('0.010'), stage=0, loss=2.353891231668431e-13
+step=1, T=Decimal('0.010'), err=(5.2740281721113424e-05, 7.16491316023788e-06), loss=[2.353891231668431e-13], training_time=5.907294070115313
+step=2, T=Decimal('0.015'), stage=0, iter=0, loss=1.7120897357644077e-06, info=(2.954413675293549e-19,)
+step=2, T=Decimal('0.015'), stage=0, iter=1, loss=3.3444779791978044e-10, info=(2.3732222060980253e-19,)
+step=2, T=Decimal('0.015'), stage=0, iter=2, loss=5.4264105511009015e-12, info=(2.2571435881875766e-19,)
+step=2, T=Decimal('0.015'), stage=0, iter=3, loss=5.991856103810209e-13, info=(2.1519502652608473e-19,)
+step=2, T=Decimal('0.015'), stage=0, loss=1.7462147253364125e-12
+step=2, T=Decimal('0.015'), err=(7.832798379093565e-05, 1.0653226387757122e-05), loss=[1.7462147253364125e-12], training_time=6.80711821699515
+step=3, T=Decimal('0.020'), stage=0, iter=0, loss=1.7000771086363233e-06, info=(2.90966868475058e-19,)
+step=3, T=Decimal('0.020'), stage=0, iter=1, loss=3.5925010396946673e-10, info=(2.265001385791513e-19,)
+step=3, T=Decimal('0.020'), stage=0, iter=2, loss=2.1142605507868287e-12, info=(2.1124031638996614e-19,)
+step=3, T=Decimal('0.020'), stage=0, iter=3, loss=5.529459083913492e-13, info=(2.024924042488686e-19,)
+step=3, T=Decimal('0.020'), stage=0, loss=1.8812439590306896e-13
+step=3, T=Decimal('0.020'), err=(0.00010302331617417749, 1.4027957089243452e-05), loss=[1.8812439590306896e-13], training_time=7.69863339792937
+step=4, T=Decimal('0.025'), stage=0, iter=0, loss=1.6881942416829724e-06, info=(2.666064793494635e-19,)
+step=4, T=Decimal('0.025'), stage=0, iter=1, loss=9.569054911652502e-11, info=(2.0742981537116525e-19,)
+step=4, T=Decimal('0.025'), stage=0, iter=2, loss=1.4025313417830375e-12, info=(1.9687922377314e-19,)
+step=4, T=Decimal('0.025'), stage=0, iter=3, loss=1.4843951943848097e-12, info=(1.8921622348830894e-19,)
+step=4, T=Decimal('0.025'), stage=0, loss=9.128957030595115e-13
+step=4, T=Decimal('0.025'), err=(0.00012744412359839025, 1.737290288110505e-05), loss=[9.128957030595115e-13], training_time=8.596072166925296
+Total time: 13.51 seconds

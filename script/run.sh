@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Restrict JAX to a single GPU (device 0)
-export CUDA_VISIBLE_DEVICES=0
+export CUDA_VISIBLE_DEVICES=3
 
 
 

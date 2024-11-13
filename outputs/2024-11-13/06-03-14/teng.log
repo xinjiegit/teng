@@ -1,0 +1,34 @@
+[2024-11-13 06:03:15,247][jax._src.xla_bridge][INFO] - Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[2024-11-13 06:03:15,247][jax._src.xla_bridge][INFO] - Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+[2024-11-13 06:03:19,184][root][INFO] - step=-1, T=Decimal('0'), err=(6.501884761416836, 1.0126811102426405), loss=(0, 0), training_time=0
+[2024-11-13 06:03:22,440][root][INFO] - step=0, T=Decimal('0.2'), stage=0, iter=0, loss=0.00018390699821708932, info=(1.680860450822531e-33,)
+[2024-11-13 06:03:23,968][root][INFO] - step=0, T=Decimal('0.2'), stage=0, iter=1, loss=0.00019549968261141658, info=(6.235487246542203e-32,)
+[2024-11-13 06:03:24,161][root][INFO] - step=0, T=Decimal('0.2'), stage=0, iter=2, loss=0.00018865505899002448, info=(1.830665710534154e-32,)
+[2024-11-13 06:03:24,274][root][INFO] - step=0, T=Decimal('0.2'), stage=0, iter=3, loss=0.00018822289904465704, info=(2.2649539027659072e-32,)
+[2024-11-13 06:03:24,277][root][INFO] - step=0, T=Decimal('0.2'), stage=0, loss=4.35909533224567e-08
+[2024-11-13 06:03:24,303][root][INFO] - step=0, T=Decimal('0.2'), err=(5.6597097035957145, 1.023790711851903), loss=[4.35909533224567e-08], training_time=5.092377810971811
+[2024-11-13 06:03:24,380][root][INFO] - step=1, T=Decimal('0.4'), stage=0, iter=0, loss=0.00020165511937367896, info=(6.472183033678263e-33,)
+[2024-11-13 06:03:24,569][root][INFO] - step=1, T=Decimal('0.4'), stage=0, iter=1, loss=0.0003065975653396545, info=(2.1835877808212666e-31,)
+[2024-11-13 06:03:24,762][root][INFO] - step=1, T=Decimal('0.4'), stage=0, iter=2, loss=0.00027613089877129185, info=(2.9729730683783795e-32,)
+[2024-11-13 06:03:24,897][root][INFO] - step=1, T=Decimal('0.4'), stage=0, iter=3, loss=0.000203700838824651, info=(9.763582766976233e-33,)
+[2024-11-13 06:03:24,900][root][INFO] - step=1, T=Decimal('0.4'), stage=0, loss=6.819325962265181e-08
+[2024-11-13 06:03:24,926][root][INFO] - step=1, T=Decimal('0.4'), err=(5.1070965731358555, 1.0390061312706957), loss=[6.819325962265181e-08], training_time=5.687979763839394
+[2024-11-13 06:03:25,082][root][INFO] - step=2, T=Decimal('0.6'), stage=0, iter=0, loss=0.00021571155791667978, info=(1.5381368918967495e-31,)
+[2024-11-13 06:03:25,279][root][INFO] - step=2, T=Decimal('0.6'), stage=0, iter=1, loss=0.0009746051610011396, info=(2.960621145420946e-29,)
+[2024-11-13 06:03:25,430][root][INFO] - step=2, T=Decimal('0.6'), stage=0, iter=2, loss=0.735430181301525, info=(8.545615978613519e-29,)
+[2024-11-13 06:03:25,618][root][INFO] - step=2, T=Decimal('0.6'), stage=0, iter=3, loss=0.005197172328219114, info=(2.1426010598115927e-30,)
+[2024-11-13 06:03:25,626][root][INFO] - step=2, T=Decimal('0.6'), stage=0, loss=0.0002326509094244626
+[2024-11-13 06:03:25,665][root][INFO] - step=2, T=Decimal('0.6'), err=(4.442286088849379, 1.0123424971730832), loss=[0.0002326509094244626], training_time=6.386783419875428
+[2024-11-13 06:03:25,820][root][INFO] - step=3, T=Decimal('0.8'), stage=0, iter=0, loss=0.00028001706563015054, info=(1.6289211697680625e-31,)
+[2024-11-13 06:03:25,963][root][INFO] - step=3, T=Decimal('0.8'), stage=0, iter=1, loss=0.0009782605567718494, info=(1.711421168674149e-29,)
+[2024-11-13 06:03:26,154][root][INFO] - step=3, T=Decimal('0.8'), stage=0, iter=2, loss=0.3221931944588828, info=(1.9637323380769118e-29,)
+[2024-11-13 06:03:26,352][root][INFO] - step=3, T=Decimal('0.8'), stage=0, iter=3, loss=0.0028985336105923397, info=(8.828013670949602e-30,)
+[2024-11-13 06:03:26,359][root][INFO] - step=3, T=Decimal('0.8'), stage=0, loss=0.006306019969549959
+[2024-11-13 06:03:26,398][root][INFO] - step=3, T=Decimal('0.8'), err=(6.087350775019011, 1.5543601922052026), loss=[0.006306019969549959], training_time=7.080268315738067
+[2024-11-13 06:03:26,491][root][INFO] - step=4, T=Decimal('1.0'), stage=0, iter=0, loss=0.00035366199705804714, info=(1.867746175167161e-30,)
+[2024-11-13 06:03:26,560][root][INFO] - step=4, T=Decimal('1.0'), stage=0, iter=1, loss=0.06090138575104223, info=(4.1512602539127606e-29,)
+[2024-11-13 06:03:26,630][root][INFO] - step=4, T=Decimal('1.0'), stage=0, iter=2, loss=0.07845627699111651, info=(8.596467111913706e-30,)
+[2024-11-13 06:03:26,734][root][INFO] - step=4, T=Decimal('1.0'), stage=0, iter=3, loss=0.04987897063735235, info=(8.936889711674554e-30,)
+[2024-11-13 06:03:26,739][root][INFO] - step=4, T=Decimal('1.0'), stage=0, loss=0.005418102940468824
+[2024-11-13 06:03:26,778][root][INFO] - step=4, T=Decimal('1.0'), err=(4.220684539229102, 1.2083337850869111), loss=[0.005418102940468824], training_time=7.421562189701945
+[2024-11-13 06:03:26,778][root][INFO] - Total time: 12.16 seconds

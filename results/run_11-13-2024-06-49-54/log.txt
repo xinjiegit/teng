@@ -1,0 +1,805 @@
+Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+step=-1, T=Decimal('0'), err=(6.501884761416838, 1.0126811102426405), loss=(0, 0), training_time=0
+step=0, T=Decimal('0.01'), stage=0, iter=0, loss=0.01680824813132864, info=(4.027907948308993e-36,)
+step=0, T=Decimal('0.01'), stage=0, iter=1, loss=0.016903576260336218, info=(9.6655762296209e-35,)
+step=0, T=Decimal('0.01'), stage=0, iter=2, loss=0.016903147035485722, info=(9.194142382897128e-35,)
+step=0, T=Decimal('0.01'), stage=0, iter=3, loss=0.016902877569907142, info=(4.903595106418472e-35,)
+step=0, T=Decimal('0.01'), stage=0, iter=4, loss=0.016902981928697228, info=(3.98181288941191e-35,)
+step=0, T=Decimal('0.01'), stage=0, iter=5, loss=0.01690293380681506, info=(2.259959792882649e-35,)
+step=0, T=Decimal('0.01'), stage=0, loss=4.100585660698809e-11
+step=0, T=Decimal('0.01'), err=(6.4435078270255, 1.013278408093165), loss=[4.100585660698809e-11], training_time=4.540006828028709
+step=1, T=Decimal('0.02'), stage=0, iter=0, loss=0.016902939273864395, info=(1.2399300772566318e-35,)
+step=1, T=Decimal('0.02'), stage=0, iter=1, loss=0.016996973694096033, info=(8.507171101730728e-35,)
+step=1, T=Decimal('0.02'), stage=0, iter=2, loss=0.016996915169253772, info=(4.652088330520707e-35,)
+step=1, T=Decimal('0.02'), stage=0, iter=3, loss=0.016996887685609665, info=(6.453198613716378e-35,)
+step=1, T=Decimal('0.02'), stage=0, iter=4, loss=0.016996785993770327, info=(1.852977567885163e-35,)
+step=1, T=Decimal('0.02'), stage=0, iter=5, loss=0.01699679653785707, info=(2.824146921518557e-35,)
+step=1, T=Decimal('0.02'), stage=0, loss=2.844969354716328e-11
+step=1, T=Decimal('0.02'), err=(6.387970329619747, 1.0138727353440213), loss=[2.844969354716328e-11], training_time=4.847107802052051
+step=2, T=Decimal('0.03'), stage=0, iter=0, loss=0.01699686568163659, info=(1.4503917954039902e-34,)
+step=2, T=Decimal('0.03'), stage=0, iter=1, loss=0.01709029547494784, info=(9.189314436609166e-35,)
+step=2, T=Decimal('0.03'), stage=0, iter=2, loss=0.017089987226088628, info=(6.413127855226258e-35,)
+step=2, T=Decimal('0.03'), stage=0, iter=3, loss=0.017089872958076, info=(2.8564504440505065e-35,)
+step=2, T=Decimal('0.03'), stage=0, iter=4, loss=0.017090005222587874, info=(4.990623899973222e-35,)
+step=2, T=Decimal('0.03'), stage=0, iter=5, loss=0.017089916351589594, info=(2.9988942736947875e-35,)
+step=2, T=Decimal('0.03'), stage=0, loss=1.3031957801611647e-13
+step=2, T=Decimal('0.03'), err=(6.33487406454958, 1.014446793556421), loss=[1.3031957801611647e-13], training_time=5.156798141077161
+step=3, T=Decimal('0.04'), stage=0, iter=0, loss=0.017090027097043114, info=(4.267426196887042e-35,)
+step=3, T=Decimal('0.04'), stage=0, iter=1, loss=0.017182376370667968, info=(4.3491769583199205e-35,)
+step=3, T=Decimal('0.04'), stage=0, iter=2, loss=0.017182273061186127, info=(2.787427555028891e-35,)
+step=3, T=Decimal('0.04'), stage=0, iter=3, loss=0.017182306056676765, info=(2.1939520210141337e-35,)
+step=3, T=Decimal('0.04'), stage=0, iter=4, loss=0.017182222933541054, info=(3.2727823322271295e-35,)
+step=3, T=Decimal('0.04'), stage=0, iter=5, loss=0.01718224665164678, info=(1.8302335098173895e-35,)
+step=3, T=Decimal('0.04'), stage=0, loss=1.8967587869340228e-11
+step=3, T=Decimal('0.04'), err=(6.284005239898942, 1.0150062926688916), loss=[1.8967587869340228e-11], training_time=5.463915900094435
+step=4, T=Decimal('0.05'), stage=0, iter=0, loss=0.017182316069197606, info=(2.904936265116871e-35,)
+step=4, T=Decimal('0.05'), stage=0, iter=1, loss=0.0172733143931174, info=(5.032658901456145e-35,)
+step=4, T=Decimal('0.05'), stage=0, iter=2, loss=0.017273792043123275, info=(2.8099845405223914e-35,)
+step=4, T=Decimal('0.05'), stage=0, iter=3, loss=0.017273749797362133, info=(1.0094815643866156e-35,)
+step=4, T=Decimal('0.05'), stage=0, iter=4, loss=0.017273753448024672, info=(1.145494001885783e-35,)
+step=4, T=Decimal('0.05'), stage=0, iter=5, loss=0.01727377952394672, info=(1.4420796060267507e-35,)
+step=4, T=Decimal('0.05'), stage=0, loss=5.42318361498359e-13
+step=4, T=Decimal('0.05'), err=(6.235323692908348, 1.0155803556390701), loss=[5.42318361498359e-13], training_time=5.7717101441230625
+step=5, T=Decimal('0.06'), stage=0, iter=0, loss=0.017273843489156428, info=(3.872930981969222e-35,)
+step=5, T=Decimal('0.06'), stage=0, iter=1, loss=0.017364435992152337, info=(5.779092907105708e-35,)
+step=5, T=Decimal('0.06'), stage=0, iter=2, loss=0.017364535885356722, info=(4.3019833819867703e-35,)
+step=5, T=Decimal('0.06'), stage=0, iter=3, loss=0.017364578705164686, info=(2.024095189338075e-35,)
+step=5, T=Decimal('0.06'), stage=0, iter=4, loss=0.01736453487305108, info=(1.985292290946275e-35,)
+step=5, T=Decimal('0.06'), stage=0, iter=5, loss=0.017364504857555616, info=(1.5210589600492365e-35,)
+step=5, T=Decimal('0.06'), stage=0, loss=3.3654950621428405e-13
+step=5, T=Decimal('0.06'), err=(6.188580131797205, 1.0161604690256545), loss=[3.3654950621428405e-13], training_time=6.079825199209154
+step=6, T=Decimal('0.07'), stage=0, iter=0, loss=0.017364550458132386, info=(1.6703357564245965e-35,)
+step=6, T=Decimal('0.07'), stage=0, iter=1, loss=0.01745431856197456, info=(2.6465868427073385e-35,)
+step=6, T=Decimal('0.07'), stage=0, iter=2, loss=0.017454419443776147, info=(3.259485239299959e-35,)
+step=6, T=Decimal('0.07'), stage=0, iter=3, loss=0.017454385010389446, info=(1.7280433963946257e-35,)
+step=6, T=Decimal('0.07'), stage=0, iter=4, loss=0.017454404836545433, info=(1.3056280178439263e-35,)
+step=6, T=Decimal('0.07'), stage=0, iter=5, loss=0.017454387663111717, info=(1.3421484981126156e-35,)
+step=6, T=Decimal('0.07'), stage=0, loss=1.0717297917076383e-14
+step=6, T=Decimal('0.07'), err=(6.14355816721193, 1.0167396409324163), loss=[1.0717297917076383e-14], training_time=6.386568937217817
+step=7, T=Decimal('0.08'), stage=0, iter=0, loss=0.01745448513724108, info=(3.410156701981695e-35,)
+step=7, T=Decimal('0.08'), stage=0, iter=1, loss=0.01754290499380994, info=(3.229960072354265e-35,)
+step=7, T=Decimal('0.08'), stage=0, iter=2, loss=0.01754356388525405, info=(2.786138765627164e-35,)
+step=7, T=Decimal('0.08'), stage=0, iter=3, loss=0.017543514074331648, info=(1.9520576201582858e-35,)
+step=7, T=Decimal('0.08'), stage=0, iter=4, loss=0.01754360898543349, info=(1.120604265800346e-35,)
+step=7, T=Decimal('0.08'), stage=0, iter=5, loss=0.017543554249737452, info=(2.2544510532012463e-35,)
+step=7, T=Decimal('0.08'), stage=0, loss=2.797707739923888e-11
+step=7, T=Decimal('0.08'), err=(6.100245618019919, 1.017341590826767), loss=[2.797707739923888e-11], training_time=6.693278594175354
+step=8, T=Decimal('0.09'), stage=0, iter=0, loss=0.01754359528074521, info=(3.152261135886027e-36,)
+step=8, T=Decimal('0.09'), stage=0, iter=1, loss=0.017631634855278407, info=(3.137352553788649e-35,)
+step=8, T=Decimal('0.09'), stage=0, iter=2, loss=0.017631914755785065, info=(2.6378356407514125e-35,)
+step=8, T=Decimal('0.09'), stage=0, iter=3, loss=0.01763188008186607, info=(2.3006305313232534e-35,)
+step=8, T=Decimal('0.09'), stage=0, iter=4, loss=0.017631843302413148, info=(2.2139258054144797e-35,)
+step=8, T=Decimal('0.09'), stage=0, iter=5, loss=0.01763188913219262, info=(2.3770024242729213e-35,)
+step=8, T=Decimal('0.09'), stage=0, loss=5.5583301941379355e-14
+step=8, T=Decimal('0.09'), err=(6.058258629882241, 1.0179255900990285), loss=[5.5583301941379355e-14], training_time=7.00147665431723
+step=9, T=Decimal('0.10'), stage=0, iter=0, loss=0.017631876925490158, info=(3.726689982882878e-36,)
+step=9, T=Decimal('0.10'), stage=0, iter=1, loss=0.01771927722236487, info=(1.9011623164410454e-35,)
+step=9, T=Decimal('0.10'), stage=0, iter=2, loss=0.01771936471840771, info=(1.3594676828107776e-35,)
+step=9, T=Decimal('0.10'), stage=0, iter=3, loss=0.017719374892392583, info=(2.6978046636739337e-35,)
+step=9, T=Decimal('0.10'), stage=0, iter=4, loss=0.01771939928925046, info=(3.062648453761096e-35,)
+step=9, T=Decimal('0.10'), stage=0, iter=5, loss=0.017719379707639815, info=(9.591800906011606e-36,)
+step=9, T=Decimal('0.10'), stage=0, loss=1.123927726090388e-10
+step=9, T=Decimal('0.10'), err=(6.017841915925705, 1.0185536912899067), loss=[1.123927726090388e-10], training_time=7.3072343522217125
+step=10, T=Decimal('0.11'), stage=0, iter=0, loss=0.017719411331447554, info=(2.935135948425664e-35,)
+step=10, T=Decimal('0.11'), stage=0, iter=1, loss=0.01780601744028143, info=(2.4170887259656065e-35,)
+step=10, T=Decimal('0.11'), stage=0, iter=2, loss=0.01780618668983872, info=(3.3634607109426187e-35,)
+step=10, T=Decimal('0.11'), stage=0, iter=3, loss=0.01780616702869272, info=(6.966124612294833e-36,)
+step=10, T=Decimal('0.11'), stage=0, iter=4, loss=0.017806100677183436, info=(2.475347693925368e-35,)
+step=10, T=Decimal('0.11'), stage=0, iter=5, loss=0.017806107163137002, info=(1.8391010405653317e-35,)
+step=10, T=Decimal('0.11'), stage=0, loss=2.573684927799364e-12
+step=10, T=Decimal('0.11'), err=(5.978423082943314, 1.0191483536160777), loss=[2.573684927799364e-12], training_time=7.612170087173581
+step=11, T=Decimal('0.12'), stage=0, iter=0, loss=0.017806140373369566, info=(3.600657593116697e-36,)
+step=11, T=Decimal('0.12'), stage=0, iter=1, loss=0.017892421980659347, info=(1.4515764433797e-35,)
+step=11, T=Decimal('0.12'), stage=0, iter=2, loss=0.017892031147430834, info=(1.224924376150438e-35,)
+step=11, T=Decimal('0.12'), stage=0, iter=3, loss=0.017892071523838825, info=(1.216275068771566e-35,)
+step=11, T=Decimal('0.12'), stage=0, iter=4, loss=0.017892055476647326, info=(1.2728465953626652e-35,)
+step=11, T=Decimal('0.12'), stage=0, iter=5, loss=0.017892081637888677, info=(2.595792843900759e-35,)
+step=11, T=Decimal('0.12'), stage=0, loss=2.7079696396506145e-11
+step=11, T=Decimal('0.12'), err=(5.940202702181853, 1.0197606213647141), loss=[2.7079696396506145e-11], training_time=7.919382619205862
+step=12, T=Decimal('0.13'), stage=0, iter=0, loss=0.017892106289639973, info=(1.4586667619710114e-35,)
+step=12, T=Decimal('0.13'), stage=0, iter=1, loss=0.01797701147790847, info=(1.381812263476756e-35,)
+step=12, T=Decimal('0.13'), stage=0, iter=2, loss=0.017977256914021827, info=(1.905510870677089e-35,)
+step=12, T=Decimal('0.13'), stage=0, iter=3, loss=0.017977308147318537, info=(9.696609242199134e-36,)
+step=12, T=Decimal('0.13'), stage=0, iter=4, loss=0.017977271223034597, info=(1.2350237875375893e-35,)
+step=12, T=Decimal('0.13'), stage=0, iter=5, loss=0.01797724570762718, info=(3.249054601313237e-35,)
+step=12, T=Decimal('0.13'), stage=0, loss=1.7445587186402716e-12
+step=12, T=Decimal('0.13'), err=(5.902847461329917, 1.020349022524261), loss=[1.7445587186402716e-12], training_time=8.21972422208637
+step=13, T=Decimal('0.14'), stage=0, iter=0, loss=0.01797729517043316, info=(4.211147467844074e-36,)
+step=13, T=Decimal('0.14'), stage=0, iter=1, loss=0.01806164177218048, info=(3.9183283617696103e-35,)
+step=13, T=Decimal('0.14'), stage=0, iter=2, loss=0.01806168124485841, info=(1.798773361288531e-35,)
+step=13, T=Decimal('0.14'), stage=0, iter=3, loss=0.018061664089655136, info=(1.3929427973575857e-35,)
+step=13, T=Decimal('0.14'), stage=0, iter=4, loss=0.018061647341958937, info=(2.515723035286576e-35,)
+step=13, T=Decimal('0.14'), stage=0, iter=5, loss=0.018061700578529283, info=(2.955036498257558e-35,)
+step=13, T=Decimal('0.14'), stage=0, loss=4.270291739548289e-12
+step=13, T=Decimal('0.14'), err=(5.866513692316301, 1.0209546442405015), loss=[4.270291739548289e-12], training_time=8.523618896026164
+step=14, T=Decimal('0.15'), stage=0, iter=0, loss=0.018061710826120236, info=(1.7231106830954703e-35,)
+step=14, T=Decimal('0.15'), stage=0, iter=1, loss=0.018144869256866848, info=(2.3938655468570391e-35,)
+step=14, T=Decimal('0.15'), stage=0, iter=2, loss=0.01814532314425558, info=(1.6530857992327987e-35,)
+step=14, T=Decimal('0.15'), stage=0, iter=3, loss=0.01814530437542334, info=(3.328236152614776e-35,)
+step=14, T=Decimal('0.15'), stage=0, iter=4, loss=0.01814534008930628, info=(1.0364271415254275e-35,)
+step=14, T=Decimal('0.15'), stage=0, iter=5, loss=0.01814533384423906, info=(1.3478248969895617e-35,)
+step=14, T=Decimal('0.15'), stage=0, loss=2.3545926212525782e-11
+step=14, T=Decimal('0.15'), err=(5.8311141790457155, 1.021575664108908), loss=[2.3545926212525782e-11], training_time=8.829100660979748
+step=15, T=Decimal('0.16'), stage=0, iter=0, loss=0.018145367886167305, info=(1.2029847481271955e-35,)
+step=15, T=Decimal('0.16'), stage=0, iter=1, loss=0.018227989387805905, info=(3.8367272500668547e-35,)
+step=15, T=Decimal('0.16'), stage=0, iter=2, loss=0.0182282120954942, info=(9.478665493829674e-36,)
+step=15, T=Decimal('0.16'), stage=0, iter=3, loss=0.018228228687708122, info=(2.2717258974528807e-35,)
+step=15, T=Decimal('0.16'), stage=0, iter=4, loss=0.018228221448837893, info=(1.6812707766586392e-35,)
+step=15, T=Decimal('0.16'), stage=0, iter=5, loss=0.018228230552228594, info=(1.2478778333305924e-35,)
+step=15, T=Decimal('0.16'), stage=0, loss=1.529487721560385e-14
+step=15, T=Decimal('0.16'), err=(5.796395598480409, 1.0221796713206526), loss=[1.529487721560385e-14], training_time=9.136662195902318
+step=16, T=Decimal('0.17'), stage=0, iter=0, loss=0.01822830019254216, info=(1.2870968767924192e-35,)
+step=16, T=Decimal('0.17'), stage=0, iter=1, loss=0.018310488899510837, info=(1.5401006421194832e-35,)
+step=16, T=Decimal('0.17'), stage=0, iter=2, loss=0.018310447085945935, info=(3.0611911033581977e-35,)
+step=16, T=Decimal('0.17'), stage=0, iter=3, loss=0.018310381408624787, info=(1.79999308734512e-35,)
+step=16, T=Decimal('0.17'), stage=0, iter=4, loss=0.018310349327345064, info=(1.7915018374647133e-35,)
+step=16, T=Decimal('0.17'), stage=0, iter=5, loss=0.018310376910314844, info=(2.89504178561055e-35,)
+step=16, T=Decimal('0.17'), stage=0, loss=2.74062378535986e-12
+step=16, T=Decimal('0.17'), err=(5.762457771655299, 1.0227949639383516), loss=[2.74062378535986e-12], training_time=9.443231191951782
+step=17, T=Decimal('0.18'), stage=0, iter=0, loss=0.018310413886467862, info=(3.9281511169379295e-36,)
+step=17, T=Decimal('0.18'), stage=0, iter=1, loss=0.0183913982550719, info=(3.68263957409868e-35,)
+step=17, T=Decimal('0.18'), stage=0, iter=2, loss=0.01839172767660853, info=(1.3240081323356615e-35,)
+step=17, T=Decimal('0.18'), stage=0, iter=3, loss=0.018391764122408307, info=(1.1005017716455972e-35,)
+step=17, T=Decimal('0.18'), stage=0, iter=4, loss=0.018391784025105152, info=(2.024122064000543e-35,)
+step=17, T=Decimal('0.18'), stage=0, iter=5, loss=0.018391747607680954, info=(2.3434473572409326e-35,)
+step=17, T=Decimal('0.18'), stage=0, loss=8.378810792625767e-11
+step=17, T=Decimal('0.18'), err=(5.72938556323786, 1.0234468924846858), loss=[8.378810792625767e-11], training_time=9.76415776903741
+step=18, T=Decimal('0.19'), stage=0, iter=0, loss=0.01839179162278425, info=(1.0120096085680422e-35,)
+step=18, T=Decimal('0.19'), stage=0, iter=1, loss=0.018472429313033202, info=(1.9568468771561651e-35,)
+step=18, T=Decimal('0.19'), stage=0, iter=2, loss=0.018472390682904488, info=(2.812679945965791e-35,)
+step=18, T=Decimal('0.19'), stage=0, iter=3, loss=0.018472375736060833, info=(1.0296750980999945e-35,)
+step=18, T=Decimal('0.19'), stage=0, iter=4, loss=0.018472367438556115, info=(3.5327012482610164e-35,)
+step=18, T=Decimal('0.19'), stage=0, iter=5, loss=0.01847242759870538, info=(1.647598520717637e-35,)
+step=18, T=Decimal('0.19'), stage=0, loss=2.8457542893842255e-12
+step=18, T=Decimal('0.19'), err=(5.696686137226303, 1.024056669650742), loss=[2.8457542893842255e-12], training_time=10.086710726143792
+step=19, T=Decimal('0.20'), stage=0, iter=0, loss=0.018472405681855132, info=(1.249036212306268e-35,)
+step=19, T=Decimal('0.20'), stage=0, iter=1, loss=0.018552464817428494, info=(2.9510277532939195e-35,)
+step=19, T=Decimal('0.20'), stage=0, iter=2, loss=0.018552223145677508, info=(1.8655572820383243e-35,)
+step=19, T=Decimal('0.20'), stage=0, iter=3, loss=0.018552236249696066, info=(2.4434007884001233e-35,)
+step=19, T=Decimal('0.20'), stage=0, iter=4, loss=0.018552227338439437, info=(1.0193268878520604e-35,)
+step=19, T=Decimal('0.20'), stage=0, iter=5, loss=0.018552228839030658, info=(1.1035677857806094e-35,)
+step=19, T=Decimal('0.20'), stage=0, loss=1.7431928598522442e-13
+step=19, T=Decimal('0.20'), err=(5.664606770461563, 1.024676547316112), loss=[1.7431928598522442e-13], training_time=10.403780336258933
+step=20, T=Decimal('0.21'), stage=0, iter=0, loss=0.018552259950474315, info=(2.815836386407436e-35,)
+step=20, T=Decimal('0.21'), stage=0, iter=1, loss=0.01863125950216412, info=(2.633808595950868e-35,)
+step=20, T=Decimal('0.21'), stage=0, iter=2, loss=0.018631329285540003, info=(1.2911642433319762e-35,)
+step=20, T=Decimal('0.21'), stage=0, iter=3, loss=0.018631356942216102, info=(2.682934057465589e-35,)
+step=20, T=Decimal('0.21'), stage=0, iter=4, loss=0.018631345581976103, info=(1.7031254364765592e-35,)
+step=20, T=Decimal('0.21'), stage=0, iter=5, loss=0.018631346289862342, info=(1.4539222125248248e-35,)
+step=20, T=Decimal('0.21'), stage=0, loss=3.147023503589874e-11
+step=20, T=Decimal('0.21'), err=(5.633222597759659, 1.0253280035079897), loss=[3.147023503589874e-11], training_time=10.718508182326332
+step=21, T=Decimal('0.22'), stage=0, iter=0, loss=0.018631355326028307, info=(8.281243078974199e-36,)
+step=21, T=Decimal('0.22'), stage=0, iter=1, loss=0.018709085594725144, info=(4.0800568586378513e-35,)
+step=21, T=Decimal('0.22'), stage=0, iter=2, loss=0.01870971710016745, info=(1.770638211794005e-35,)
+step=21, T=Decimal('0.22'), stage=0, iter=3, loss=0.018709702035195182, info=(1.5646905827299045e-35,)
+step=21, T=Decimal('0.22'), stage=0, iter=4, loss=0.01870970580685216, info=(1.4030730417951072e-35,)
+step=21, T=Decimal('0.22'), stage=0, iter=5, loss=0.018709701845726828, info=(1.4331239299620263e-35,)
+step=21, T=Decimal('0.22'), stage=0, loss=7.1426243466585225e-12
+step=21, T=Decimal('0.22'), err=(5.602147679870245, 1.0259479017513342), loss=[7.1426243466585225e-12], training_time=11.025476226350293
+step=22, T=Decimal('0.23'), stage=0, iter=0, loss=0.018709736482219668, info=(3.6745680402237384e-35,)
+step=22, T=Decimal('0.23'), stage=0, iter=1, loss=0.01878703162654938, info=(2.7413279267469526e-35,)
+step=22, T=Decimal('0.23'), stage=0, iter=2, loss=0.018787330641476467, info=(1.546148924309125e-35,)
+step=22, T=Decimal('0.23'), stage=0, iter=3, loss=0.018787361236042095, info=(2.491144394746971e-35,)
+step=22, T=Decimal('0.23'), stage=0, iter=4, loss=0.01878731842855054, info=(2.2642599227279206e-35,)
+step=22, T=Decimal('0.23'), stage=0, iter=5, loss=0.0187873367870148, info=(1.4049226660849145e-35,)
+step=22, T=Decimal('0.23'), stage=0, loss=2.6342467848572034e-12
+step=22, T=Decimal('0.23'), err=(5.571654650141372, 1.0265922533862648), loss=[2.6342467848572034e-12], training_time=11.337485183263198
+step=23, T=Decimal('0.24'), stage=0, iter=0, loss=0.01878738416606958, info=(5.707476916326833e-36,)
+step=23, T=Decimal('0.24'), stage=0, iter=1, loss=0.0188641307475862, info=(2.415052731222122e-35,)
+step=23, T=Decimal('0.24'), stage=0, iter=2, loss=0.01886425616952654, info=(2.699951443952969e-35,)
+step=23, T=Decimal('0.24'), stage=0, iter=3, loss=0.018864249344126748, info=(1.3664785337311448e-35,)
+step=23, T=Decimal('0.24'), stage=0, iter=4, loss=0.018864235105303447, info=(1.0511312600237461e-35,)
+step=23, T=Decimal('0.24'), stage=0, iter=5, loss=0.018864240328970803, info=(2.0421808506650594e-35,)
+step=23, T=Decimal('0.24'), stage=0, loss=4.264811798056129e-12
+step=23, T=Decimal('0.24'), err=(5.541519386892313, 1.0272257783649834), loss=[4.264811798056129e-12], training_time=11.64556124038063
+step=24, T=Decimal('0.25'), stage=0, iter=0, loss=0.018864302797638087, info=(1.269324897744454e-35,)
+step=24, T=Decimal('0.25'), stage=0, iter=1, loss=0.018940461616686086, info=(2.4861472164460714e-35,)
+step=24, T=Decimal('0.25'), stage=0, iter=2, loss=0.018940491015046246, info=(1.1078439119437066e-35,)
+step=24, T=Decimal('0.25'), stage=0, iter=3, loss=0.018940463668871952, info=(1.5289050879899089e-35,)
+step=24, T=Decimal('0.25'), stage=0, iter=4, loss=0.01894043991523124, info=(1.3235777072572822e-35,)
+step=24, T=Decimal('0.25'), stage=0, iter=5, loss=0.018940428658758723, info=(9.396722402523453e-36,)
+step=24, T=Decimal('0.25'), stage=0, loss=1.6742121105735717e-15
+step=24, T=Decimal('0.25'), err=(5.511853739999317, 1.0278744576433103), loss=[1.6742121105735717e-15], training_time=11.955029867356643
+step=25, T=Decimal('0.26'), stage=0, iter=0, loss=0.01894047974331813, info=(1.2247653574312905e-35,)
+step=25, T=Decimal('0.26'), stage=0, iter=1, loss=0.01901614302440552, info=(2.1597283485922908e-35,)
+step=25, T=Decimal('0.26'), stage=0, iter=2, loss=0.019015917136896, info=(2.327894298501763e-35,)
+step=25, T=Decimal('0.26'), stage=0, iter=3, loss=0.019015912467027246, info=(2.808522327053303e-35,)
+step=25, T=Decimal('0.26'), stage=0, iter=4, loss=0.01901592101462263, info=(1.8073724640670625e-35,)
+step=25, T=Decimal('0.26'), stage=0, iter=5, loss=0.019015897396945477, info=(9.09346832111071e-36,)
+step=25, T=Decimal('0.26'), stage=0, loss=1.922271210543884e-13
+step=25, T=Decimal('0.26'), err=(5.482570041033168, 1.0285269833120756), loss=[1.922271210543884e-13], training_time=12.262012753169984
+step=26, T=Decimal('0.27'), stage=0, iter=0, loss=0.01901593359286236, info=(1.2135042787957194e-35,)
+step=26, T=Decimal('0.27'), stage=0, iter=1, loss=0.019090610397942617, info=(1.723274359573067e-35,)
+step=26, T=Decimal('0.27'), stage=0, iter=2, loss=0.019090642033876844, info=(2.63290286837001e-35,)
+step=26, T=Decimal('0.27'), stage=0, iter=3, loss=0.019090643802439203, info=(1.5369522092139938e-35,)
+step=26, T=Decimal('0.27'), stage=0, iter=4, loss=0.019090640603503604, info=(3.04074956223741e-35,)
+step=26, T=Decimal('0.27'), stage=0, iter=5, loss=0.019090620830475035, info=(1.6653856034571923e-35,)
+step=26, T=Decimal('0.27'), stage=0, loss=3.5928259564234904e-15
+step=26, T=Decimal('0.27'), err=(5.453668203762556, 1.0291878562830719), loss=[3.5928259564234904e-15], training_time=12.564547466114163
+step=27, T=Decimal('0.28'), stage=0, iter=0, loss=0.019090693374116497, info=(5.0781820296788445e-36,)
+step=27, T=Decimal('0.28'), stage=0, iter=1, loss=0.019164873372307132, info=(2.265185147415092e-35,)
+step=27, T=Decimal('0.28'), stage=0, iter=2, loss=0.019164636543019517, info=(3.491194186870933e-35,)
+step=27, T=Decimal('0.28'), stage=0, iter=3, loss=0.019164668320443008, info=(2.007097126195997e-35,)
+step=27, T=Decimal('0.28'), stage=0, iter=4, loss=0.019164660140592916, info=(1.7271901390334654e-35,)
+step=27, T=Decimal('0.28'), stage=0, iter=5, loss=0.019164669612685873, info=(5.7018363677092793e-36,)
+step=27, T=Decimal('0.28'), stage=0, loss=1.68732939218102e-11
+step=27, T=Decimal('0.28'), err=(5.425216425267654, 1.0298742390663893), loss=[1.68732939218102e-11], training_time=12.868677653139457
+step=28, T=Decimal('0.29'), stage=0, iter=0, loss=0.019164733631519864, info=(5.043239954142574e-36,)
+step=28, T=Decimal('0.29'), stage=0, iter=1, loss=0.019237949717809993, info=(4.674604829208522e-35,)
+step=28, T=Decimal('0.29'), stage=0, iter=2, loss=0.019238003086559402, info=(2.565568436868638e-35,)
+step=28, T=Decimal('0.29'), stage=0, iter=3, loss=0.01923801483267112, info=(1.2022021937529913e-35,)
+step=28, T=Decimal('0.29'), stage=0, iter=4, loss=0.019238054652450945, info=(1.6919239453256513e-35,)
+step=28, T=Decimal('0.29'), stage=0, iter=5, loss=0.01923798859567244, info=(2.773200171090017e-35,)
+step=28, T=Decimal('0.29'), stage=0, loss=2.7098245351066538e-14
+step=28, T=Decimal('0.29'), err=(5.396997867337454, 1.0305488972416588), loss=[2.7098245351066538e-14], training_time=13.181340682087466
+step=29, T=Decimal('0.30'), stage=0, iter=0, loss=0.01923802176478861, info=(9.107758619216802e-36,)
+step=29, T=Decimal('0.30'), stage=0, iter=1, loss=0.01931067144710427, info=(2.3849152988620463e-35,)
+step=29, T=Decimal('0.30'), stage=0, iter=2, loss=0.019310585350008905, info=(1.575840308794502e-35,)
+step=29, T=Decimal('0.30'), stage=0, iter=3, loss=0.019310601135271208, info=(2.7836595166375985e-35,)
+step=29, T=Decimal('0.30'), stage=0, iter=4, loss=0.019310585753495296, info=(5.766775004831389e-36,)
+step=29, T=Decimal('0.30'), stage=0, iter=5, loss=0.019310552750304143, info=(3.010160701016532e-35,)
+step=29, T=Decimal('0.30'), stage=0, loss=3.0691957686519113e-12
+step=29, T=Decimal('0.30'), err=(5.369046595141431, 1.0312215656285677), loss=[3.0691957686519113e-12], training_time=13.489114385098219
+step=30, T=Decimal('0.31'), stage=0, iter=0, loss=0.019310610571618366, info=(4.6259578692741875e-36,)
+step=30, T=Decimal('0.31'), stage=0, iter=1, loss=0.019382478019097236, info=(2.1998196546020518e-35,)
+step=30, T=Decimal('0.31'), stage=0, iter=2, loss=0.019382464539870616, info=(2.7753996312230004e-35,)
+step=30, T=Decimal('0.31'), stage=0, iter=3, loss=0.019382489234701764, info=(1.9974306510140734e-35,)
+step=30, T=Decimal('0.31'), stage=0, iter=4, loss=0.0193824371018843, info=(1.5381806345314488e-35,)
+step=30, T=Decimal('0.31'), stage=0, iter=5, loss=0.019382489159323814, info=(2.4727800756915265e-35,)
+step=30, T=Decimal('0.31'), stage=0, loss=6.699752337979029e-12
+step=30, T=Decimal('0.31'), err=(5.341499630760917, 1.0319217908388183), loss=[6.699752337979029e-12], training_time=13.799925385275856
+step=31, T=Decimal('0.32'), stage=0, iter=0, loss=0.019382497353415105, info=(4.934385508046611e-36,)
+step=31, T=Decimal('0.32'), stage=0, iter=1, loss=0.019453620498565114, info=(2.976851984496649e-35,)
+step=31, T=Decimal('0.32'), stage=0, iter=2, loss=0.019453654700184567, info=(1.4311156562652825e-35,)
+step=31, T=Decimal('0.32'), stage=0, iter=3, loss=0.019453637476457904, info=(2.4838287468371093e-35,)
+step=31, T=Decimal('0.32'), stage=0, iter=4, loss=0.019453675773412546, info=(1.6564478214133374e-35,)
+step=31, T=Decimal('0.32'), stage=0, iter=5, loss=0.019453643585496904, info=(1.935791957429495e-35,)
+step=31, T=Decimal('0.32'), stage=0, loss=1.9141509970689034e-13
+step=31, T=Decimal('0.32'), err=(5.314183462941977, 1.0326191835121712), loss=[1.9141509970689034e-13], training_time=14.105544085148722
+step=32, T=Decimal('0.33'), stage=0, iter=0, loss=0.019453690232805066, info=(7.638296174591604e-36,)
+step=32, T=Decimal('0.33'), stage=0, iter=1, loss=0.019523710140999014, info=(2.0932643633395623e-35,)
+step=32, T=Decimal('0.33'), stage=0, iter=2, loss=0.019524162055864276, info=(1.652280642282206e-35,)
+step=32, T=Decimal('0.33'), stage=0, iter=3, loss=0.019524156234433425, info=(1.9951811835835725e-35,)
+step=32, T=Decimal('0.33'), stage=0, iter=4, loss=0.019524177798277365, info=(1.2477386810299684e-35,)
+step=32, T=Decimal('0.33'), stage=0, iter=5, loss=0.01952416465291103, info=(2.542553026601818e-35,)
+step=32, T=Decimal('0.33'), stage=0, loss=3.1441705162302455e-12
+step=32, T=Decimal('0.33'), err=(5.287170595603318, 1.033330462641699), loss=[3.1441705162302455e-12], training_time=14.409976766211912
+step=33, T=Decimal('0.34'), stage=0, iter=0, loss=0.01952419502795467, info=(1.0635361153200493e-35,)
+step=33, T=Decimal('0.34'), stage=0, iter=1, loss=0.019593734585327982, info=(2.963429204345799e-35,)
+step=33, T=Decimal('0.34'), stage=0, iter=2, loss=0.019593974309771695, info=(1.1179910526775918e-35,)
+step=33, T=Decimal('0.34'), stage=0, iter=3, loss=0.019593932789624565, info=(7.77619861830564e-36,)
+step=33, T=Decimal('0.34'), stage=0, iter=4, loss=0.019593954839064544, info=(2.5135283462946037e-35,)
+step=33, T=Decimal('0.34'), stage=0, iter=5, loss=0.01959394797474569, info=(2.2388371848349574e-35,)
+step=33, T=Decimal('0.34'), stage=0, loss=1.962338621100669e-12
+step=33, T=Decimal('0.34'), err=(5.26033939616891, 1.0340343362357822), loss=[1.962338621100669e-12], training_time=14.722389169270173
+step=34, T=Decimal('0.35'), stage=0, iter=0, loss=0.01959400343181861, info=(1.9092925651598223e-35,)
+step=34, T=Decimal('0.35'), stage=0, iter=1, loss=0.0196631219900217, info=(1.5951080236701604e-35,)
+step=34, T=Decimal('0.35'), stage=0, iter=2, loss=0.01966309910707629, info=(3.355670249303182e-35,)
+step=34, T=Decimal('0.35'), stage=0, iter=3, loss=0.019663108423474025, info=(1.531778193773128e-35,)
+step=34, T=Decimal('0.35'), stage=0, iter=4, loss=0.019663111786532086, info=(1.3873665173322805e-35,)
+step=34, T=Decimal('0.35'), stage=0, iter=5, loss=0.019663093910749427, info=(1.52755268475264e-35,)
+step=34, T=Decimal('0.35'), stage=0, loss=2.154323367105941e-13
+step=34, T=Decimal('0.35'), err=(5.23380111103869, 1.0347548416410095), loss=[2.154323367105941e-13], training_time=15.037164757261053
+step=35, T=Decimal('0.36'), stage=0, iter=0, loss=0.019663099576397322, info=(6.087179272359402e-36,)
+step=35, T=Decimal('0.36'), stage=0, iter=1, loss=0.01973113358270012, info=(3.0747354937949757e-35,)
+step=35, T=Decimal('0.36'), stage=0, iter=2, loss=0.019731467655026848, info=(1.9119159481186003e-35,)
+step=35, T=Decimal('0.36'), stage=0, iter=3, loss=0.019731483469937326, info=(1.5673834613519138e-35,)
+step=35, T=Decimal('0.36'), stage=0, iter=4, loss=0.01973150407241943, info=(2.5513788482614894e-35,)
+step=35, T=Decimal('0.36'), stage=0, iter=5, loss=0.019731449401215864, info=(3.952958917525697e-35,)
+step=35, T=Decimal('0.36'), stage=0, loss=1.2040302748476337e-13
+step=35, T=Decimal('0.36'), err=(5.207482248313242, 1.0354796394691423), loss=[1.2040302748476337e-13], training_time=15.346385862212628
+step=36, T=Decimal('0.37'), stage=0, iter=0, loss=0.019731530781670763, info=(3.0659614733513046e-35,)
+step=36, T=Decimal('0.37'), stage=0, iter=1, loss=0.019799250011223506, info=(2.3815434474135596e-35,)
+step=36, T=Decimal('0.37'), stage=0, iter=2, loss=0.01979925277000495, info=(2.933277046020422e-35,)
+step=36, T=Decimal('0.37'), stage=0, iter=3, loss=0.019799258399329604, info=(1.6344911739721453e-35,)
+step=36, T=Decimal('0.37'), stage=0, iter=4, loss=0.01979927223430604, info=(2.0017801379543751e-35,)
+step=36, T=Decimal('0.37'), stage=0, iter=5, loss=0.019799235579139016, info=(1.5018283425886036e-35,)
+step=36, T=Decimal('0.37'), stage=0, loss=3.819505812993209e-14
+step=36, T=Decimal('0.37'), err=(5.181405501281317, 1.0362151567093523), loss=[3.819505812993209e-14], training_time=15.653773746220395
+step=37, T=Decimal('0.38'), stage=0, iter=0, loss=0.0197992744889674, info=(5.863992365399991e-36,)
+step=37, T=Decimal('0.38'), stage=0, iter=1, loss=0.019866377688100647, info=(2.3264700591000188e-35,)
+step=37, T=Decimal('0.38'), stage=0, iter=2, loss=0.019866338896358155, info=(1.6938592349142182e-35,)
+step=37, T=Decimal('0.38'), stage=0, iter=3, loss=0.01986629886968272, info=(1.5495579763082033e-35,)
+step=37, T=Decimal('0.38'), stage=0, iter=4, loss=0.019866303712340525, info=(2.1588892196827672e-35,)
+step=37, T=Decimal('0.38'), stage=0, iter=5, loss=0.019866314730704073, info=(1.0143258531777865e-35,)
+step=37, T=Decimal('0.38'), stage=0, loss=1.641181944266124e-11
+step=37, T=Decimal('0.38'), err=(5.15564591159367, 1.0369783300122732), loss=[1.641181944266124e-11], training_time=15.962315691402182
+step=38, T=Decimal('0.39'), stage=0, iter=0, loss=0.019866358384423376, info=(7.028348141857264e-36,)
+step=38, T=Decimal('0.39'), stage=0, iter=1, loss=0.0199324865480419, info=(2.2857530699628205e-35,)
+step=38, T=Decimal('0.39'), stage=0, iter=2, loss=0.019932709782472614, info=(2.25107634534597e-35,)
+step=38, T=Decimal('0.39'), stage=0, iter=3, loss=0.019932717576487728, info=(6.783570766503696e-35,)
+step=38, T=Decimal('0.39'), stage=0, iter=4, loss=0.01993270691779452, info=(1.2063299840658488e-35,)
+step=38, T=Decimal('0.39'), stage=0, iter=5, loss=0.019932723982102888, info=(1.1431682561746746e-35,)
+step=38, T=Decimal('0.39'), stage=0, loss=4.078951248808915e-13
+step=38, T=Decimal('0.39'), err=(5.129985737057307, 1.0377271035565265), loss=[4.078951248808915e-13], training_time=16.270884507568553
+step=39, T=Decimal('0.40'), stage=0, iter=0, loss=0.01993273393566992, info=(1.6694519132187418e-35,)
+step=39, T=Decimal('0.40'), stage=0, iter=1, loss=0.01999855181573484, info=(2.2488014796610625e-35,)
+step=39, T=Decimal('0.40'), stage=0, iter=2, loss=0.019998447450282966, info=(2.459522258637975e-35,)
+step=39, T=Decimal('0.40'), stage=0, iter=3, loss=0.01999845641404489, info=(7.2658852678464e-36,)
+step=39, T=Decimal('0.40'), stage=0, iter=4, loss=0.019998437557783525, info=(1.2671943896234457e-35,)
+step=39, T=Decimal('0.40'), stage=0, iter=5, loss=0.01999844023277195, info=(1.1001179997167308e-35,)
+step=39, T=Decimal('0.40'), stage=0, loss=9.544110200432995e-12
+step=39, T=Decimal('0.40'), err=(5.104624596337239, 1.0385032234025282), loss=[9.544110200432995e-12], training_time=16.583612913498655
+step=40, T=Decimal('0.41'), stage=0, iter=0, loss=0.019998514974724504, info=(5.722932280425674e-36,)
+step=40, T=Decimal('0.41'), stage=0, iter=1, loss=0.02006323483491546, info=(4.5397622679743734e-35,)
+step=40, T=Decimal('0.41'), stage=0, iter=2, loss=0.020063531007525663, info=(1.4705072726520692e-35,)
+step=40, T=Decimal('0.41'), stage=0, iter=3, loss=0.02006354903341815, info=(1.4394614939645657e-35,)
+step=40, T=Decimal('0.41'), stage=0, iter=4, loss=0.020063537986485545, info=(1.490110563757732e-35,)
+step=40, T=Decimal('0.41'), stage=0, iter=5, loss=0.020063522347401937, info=(1.5397207445006109e-35,)
+step=40, T=Decimal('0.41'), stage=0, loss=1.3508091735220145e-12
+step=40, T=Decimal('0.41'), err=(5.079417712844271, 1.0392788011526137), loss=[1.3508091735220145e-12], training_time=16.889712364645675
+step=41, T=Decimal('0.42'), stage=0, iter=0, loss=0.020063610394089725, info=(3.796566938700437e-36,)
+step=41, T=Decimal('0.42'), stage=0, iter=1, loss=0.020128148188970546, info=(2.3134518752942537e-35,)
+step=41, T=Decimal('0.42'), stage=0, iter=2, loss=0.020127992032308622, info=(1.29365621386952e-35,)
+step=41, T=Decimal('0.42'), stage=0, iter=3, loss=0.02012801524700188, info=(3.117902625271078e-35,)
+step=41, T=Decimal('0.42'), stage=0, iter=4, loss=0.02012799297735278, info=(1.4911142970321462e-35,)
+step=41, T=Decimal('0.42'), stage=0, iter=5, loss=0.020127967193584086, info=(2.0371137016081995e-35,)
+step=41, T=Decimal('0.42'), stage=0, loss=1.4508891361124238e-13
+step=41, T=Decimal('0.42'), err=(5.054387137345781, 1.040059518311447), loss=[1.4508891361124238e-13], training_time=17.200188923627138
+step=42, T=Decimal('0.43'), stage=0, iter=0, loss=0.020128027741401947, info=(3.8513750613134406e-36,)
+step=42, T=Decimal('0.43'), stage=0, iter=1, loss=0.020191698074807647, info=(3.4609313057881766e-35,)
+step=42, T=Decimal('0.43'), stage=0, iter=2, loss=0.020191713785072455, info=(2.099043040188822e-35,)
+step=42, T=Decimal('0.43'), stage=0, iter=3, loss=0.020191741892123482, info=(1.7494837796976693e-35,)
+step=42, T=Decimal('0.43'), stage=0, iter=4, loss=0.02019180961384132, info=(1.6690713278250672e-35,)
+step=42, T=Decimal('0.43'), stage=0, iter=5, loss=0.02019173310947485, info=(1.8923434362534468e-35,)
+step=42, T=Decimal('0.43'), stage=0, loss=1.0538568673582156e-11
+step=42, T=Decimal('0.43'), err=(5.029458487704511, 1.0408311238620336), loss=[1.0538568673582156e-11], training_time=17.514969289535657
+step=43, T=Decimal('0.44'), stage=0, iter=0, loss=0.020191762357275902, info=(8.704267377260374e-36,)
+step=43, T=Decimal('0.44'), stage=0, iter=1, loss=0.020255077680938576, info=(2.9969460215349056e-35,)
+step=43, T=Decimal('0.44'), stage=0, iter=2, loss=0.02025485429307251, info=(1.1807481304138198e-35,)
+step=43, T=Decimal('0.44'), stage=0, iter=3, loss=0.0202548262837023, info=(1.3080009183693984e-35,)
+step=43, T=Decimal('0.44'), stage=0, iter=4, loss=0.020254847024596283, info=(1.9783396297854172e-35,)
+step=43, T=Decimal('0.44'), stage=0, iter=5, loss=0.020254818193259774, info=(1.7630651016357343e-35,)
+step=43, T=Decimal('0.44'), stage=0, loss=1.0461615561554179e-11
+step=43, T=Decimal('0.44'), err=(5.0047167297991715, 1.0416121086881203), loss=[1.0461615561554179e-11], training_time=17.82840061164461
+step=44, T=Decimal('0.45'), stage=0, iter=0, loss=0.020254860264889568, info=(6.036610504719173e-36,)
+step=44, T=Decimal('0.45'), stage=0, iter=1, loss=0.020317452045158953, info=(3.7685091889008875e-35,)
+step=44, T=Decimal('0.45'), stage=0, iter=2, loss=0.02031727822524789, info=(2.2345836946867336e-35,)
+step=44, T=Decimal('0.45'), stage=0, iter=3, loss=0.020317303054705305, info=(7.419974468427303e-36,)
+step=44, T=Decimal('0.45'), stage=0, iter=4, loss=0.020317293460351812, info=(1.6360452027586935e-35,)
+step=44, T=Decimal('0.45'), stage=0, iter=5, loss=0.02031725870215506, info=(2.833849552442938e-35,)
+step=44, T=Decimal('0.45'), stage=0, loss=2.221084792904057e-12
+step=44, T=Decimal('0.45'), err=(4.980199771153249, 1.0424114486573737), loss=[2.221084792904057e-12], training_time=18.139772423775867
+step=45, T=Decimal('0.46'), stage=0, iter=0, loss=0.020317300082837286, info=(5.0070473974290556e-36,)
+step=45, T=Decimal('0.46'), stage=0, iter=1, loss=0.02037880228472809, info=(5.114590628456455e-35,)
+step=45, T=Decimal('0.46'), stage=0, iter=2, loss=0.02037911243148322, info=(1.1243612792657759e-35,)
+step=45, T=Decimal('0.46'), stage=0, iter=3, loss=0.02037908088832296, info=(1.317414415457999e-35,)
+step=45, T=Decimal('0.46'), stage=0, iter=4, loss=0.020379107332953034, info=(2.667880569476222e-35,)
+step=45, T=Decimal('0.46'), stage=0, iter=5, loss=0.02037907373175219, info=(9.437997077060365e-36,)
+step=45, T=Decimal('0.46'), stage=0, loss=3.6554440301998895e-12
+step=45, T=Decimal('0.46'), err=(4.955851134032488, 1.0432183729346223), loss=[3.6554440301998895e-12], training_time=18.448804144747555
+step=46, T=Decimal('0.47'), stage=0, iter=0, loss=0.02037911001827346, info=(1.124966670470411e-35,)
+step=46, T=Decimal('0.47'), stage=0, iter=1, loss=0.020439780680262976, info=(1.5155777665325265e-35,)
+step=46, T=Decimal('0.47'), stage=0, iter=2, loss=0.02044021353183513, info=(1.765980089427455e-35,)
+step=46, T=Decimal('0.47'), stage=0, iter=3, loss=0.020440243485267448, info=(1.3831941007080083e-35,)
+step=46, T=Decimal('0.47'), stage=0, iter=4, loss=0.02044027840273878, info=(1.7026388518398844e-35,)
+step=46, T=Decimal('0.47'), stage=0, iter=5, loss=0.02044024157747045, info=(9.670307161493836e-36,)
+step=46, T=Decimal('0.47'), stage=0, loss=2.0299006422900256e-12
+step=46, T=Decimal('0.47'), err=(4.931690283026844, 1.0440378650382447), loss=[2.0299006422900256e-12], training_time=18.758750347653404
+step=47, T=Decimal('0.48'), stage=0, iter=0, loss=0.02044028202885124, info=(7.311482151857904e-36,)
+step=47, T=Decimal('0.48'), stage=0, iter=1, loss=0.02050080131982703, info=(3.5381262149571056e-35,)
+step=47, T=Decimal('0.48'), stage=0, iter=2, loss=0.020500759958646482, info=(2.493056635778397e-35,)
+step=47, T=Decimal('0.48'), stage=0, iter=3, loss=0.020500760830139766, info=(1.207531809375335e-35,)
+step=47, T=Decimal('0.48'), stage=0, iter=4, loss=0.02050077920663576, info=(1.4361206908058933e-35,)
+step=47, T=Decimal('0.48'), stage=0, iter=5, loss=0.02050078687431198, info=(1.37376768925276e-35,)
+step=47, T=Decimal('0.48'), stage=0, loss=2.5237053834161585e-12
+step=47, T=Decimal('0.48'), err=(4.907774565219827, 1.044883018344708), loss=[2.5237053834161585e-12], training_time=19.071194137679413
+step=48, T=Decimal('0.49'), stage=0, iter=0, loss=0.020500812581776873, info=(5.98878517671499e-36,)
+step=48, T=Decimal('0.49'), stage=0, iter=1, loss=0.020560632107600816, info=(1.3404579503455178e-35,)
+step=48, T=Decimal('0.49'), stage=0, iter=2, loss=0.02056069984905409, info=(1.2931859874305987e-35,)
+step=48, T=Decimal('0.49'), stage=0, iter=3, loss=0.020560667635765577, info=(1.1358242863412902e-35,)
+step=48, T=Decimal('0.49'), stage=0, iter=4, loss=0.020560679210339265, info=(2.502168654152267e-35,)
+step=48, T=Decimal('0.49'), stage=0, iter=5, loss=0.020560668555687514, info=(8.8716145688726e-36,)
+step=48, T=Decimal('0.49'), stage=0, loss=3.177205952915441e-12
+step=48, T=Decimal('0.49'), err=(4.88394495496534, 1.045720831607742), loss=[3.177205952915441e-12], training_time=19.38052501762286
+step=49, T=Decimal('0.50'), stage=0, iter=0, loss=0.020560712923036874, info=(6.980925094445166e-36,)
+step=49, T=Decimal('0.50'), stage=0, iter=1, loss=0.020620020933841236, info=(1.9611529036653747e-35,)
+step=49, T=Decimal('0.50'), stage=0, iter=2, loss=0.020619952537661284, info=(1.7324810115558683e-35,)
+step=49, T=Decimal('0.50'), stage=0, iter=3, loss=0.02061993449573, info=(4.011549390102644e-35,)
+step=49, T=Decimal('0.50'), stage=0, iter=4, loss=0.020619947344756667, info=(2.3072631673039446e-35,)
+step=49, T=Decimal('0.50'), stage=0, iter=5, loss=0.020619988844463043, info=(6.264832441976217e-36,)
+step=49, T=Decimal('0.50'), stage=0, loss=1.7060051335679184e-14
+step=49, T=Decimal('0.50'), err=(4.8603222121203435, 1.0465777386248274), loss=[1.7060051335679184e-14], training_time=19.691205561626703
+step=50, T=Decimal('0.51'), stage=0, iter=0, loss=0.02061996033443407, info=(5.595444178363551e-36,)
+step=50, T=Decimal('0.51'), stage=0, iter=1, loss=0.020678613462106032, info=(1.916868392488364e-35,)
+step=50, T=Decimal('0.51'), stage=0, iter=2, loss=0.02067856998933544, info=(1.8515715610579978e-35,)
+step=50, T=Decimal('0.51'), stage=0, iter=3, loss=0.02067858643197908, info=(1.0794710842930104e-35,)
+step=50, T=Decimal('0.51'), stage=0, iter=4, loss=0.020678577791693117, info=(1.148367508440363e-35,)
+step=50, T=Decimal('0.51'), stage=0, iter=5, loss=0.020678563579833168, info=(2.37707235018733e-35,)
+step=50, T=Decimal('0.51'), stage=0, loss=1.3680948193878892e-12
+step=50, T=Decimal('0.51'), err=(4.83683811399642, 1.047439799457139), loss=[1.3680948193878892e-12], training_time=20.00097177363932
+step=51, T=Decimal('0.52'), stage=0, iter=0, loss=0.020678604630657998, info=(2.43838372272253e-36,)
+step=51, T=Decimal('0.52'), stage=0, iter=1, loss=0.02073626798088189, info=(1.352768139873089e-35,)
+step=51, T=Decimal('0.52'), stage=0, iter=2, loss=0.020736575561100465, info=(8.846873512235788e-36,)
+step=51, T=Decimal('0.52'), stage=0, iter=3, loss=0.020736619403290708, info=(1.7197940095081226e-35,)
+step=51, T=Decimal('0.52'), stage=0, iter=4, loss=0.020736624352442556, info=(1.252134300957793e-35,)
+step=51, T=Decimal('0.52'), stage=0, iter=5, loss=0.020736622171514927, info=(1.758710520695255e-35,)
+step=51, T=Decimal('0.52'), stage=0, loss=5.657914402896681e-12
+step=51, T=Decimal('0.52'), err=(4.813485596157894, 1.0483060263600084), loss=[5.657914402896681e-12], training_time=20.307233939645812
+step=52, T=Decimal('0.53'), stage=0, iter=0, loss=0.02073661659210513, info=(3.701232806609885e-35,)
+step=52, T=Decimal('0.53'), stage=0, iter=1, loss=0.020793608816974826, info=(2.854944165910428e-35,)
+step=52, T=Decimal('0.53'), stage=0, iter=2, loss=0.020793993347996743, info=(1.9975694087090496e-35,)
+step=52, T=Decimal('0.53'), stage=0, iter=3, loss=0.020794005435414212, info=(2.755253290999823e-35,)
+step=52, T=Decimal('0.53'), stage=0, iter=4, loss=0.020793997486503256, info=(1.824544948510552e-35,)
+step=52, T=Decimal('0.53'), stage=0, iter=5, loss=0.020793973561238268, info=(1.4490942483002436e-35,)
+step=52, T=Decimal('0.53'), stage=0, loss=4.819045840504309e-12
+step=52, T=Decimal('0.53'), err=(4.790404953490198, 1.0492076407614783), loss=[4.819045840504309e-12], training_time=20.614498739596456
+step=53, T=Decimal('0.54'), stage=0, iter=0, loss=0.02079400960305521, info=(6.028181146503068e-36,)
+step=53, T=Decimal('0.54'), stage=0, iter=1, loss=0.020850766526886, info=(3.063050933584981e-35,)
+step=53, T=Decimal('0.54'), stage=0, iter=2, loss=0.020850779458650402, info=(1.8344077220655139e-35,)
+step=53, T=Decimal('0.54'), stage=0, iter=3, loss=0.020850785089826008, info=(1.507663986144074e-35,)
+step=53, T=Decimal('0.54'), stage=0, iter=4, loss=0.020850774987523076, info=(2.1855281142448715e-35,)
+step=53, T=Decimal('0.54'), stage=0, iter=5, loss=0.020850785103503546, info=(1.5093959462044287e-35,)
+step=53, T=Decimal('0.54'), stage=0, loss=7.774260610397597e-12
+step=53, T=Decimal('0.54'), err=(4.767359578935147, 1.0500935151082529), loss=[7.774260610397597e-12], training_time=20.921990719623864
+step=54, T=Decimal('0.55'), stage=0, iter=0, loss=0.020850788545017974, info=(4.3998116267208044e-36,)
+step=54, T=Decimal('0.55'), stage=0, iter=1, loss=0.020906766570512627, info=(1.929280103287079e-35,)
+step=54, T=Decimal('0.55'), stage=0, iter=2, loss=0.020906948660982028, info=(2.1138911897484976e-35,)
+step=54, T=Decimal('0.55'), stage=0, iter=3, loss=0.020906939449633694, info=(1.6503108426360987e-35,)
+step=54, T=Decimal('0.55'), stage=0, iter=4, loss=0.020906958805005687, info=(1.1188702340603416e-35,)
+step=54, T=Decimal('0.55'), stage=0, iter=5, loss=0.020906922739291275, info=(1.127752161468447e-35,)
+step=54, T=Decimal('0.55'), stage=0, loss=1.761192996695919e-12
+step=54, T=Decimal('0.55'), err=(4.744571736418701, 1.0510129663469214), loss=[1.761192996695919e-12], training_time=21.229888108558953
+step=55, T=Decimal('0.56'), stage=0, iter=0, loss=0.020906988670645218, info=(1.2486194219878443e-35,)
+step=55, T=Decimal('0.56'), stage=0, iter=1, loss=0.020962398184837878, info=(9.100477952340894e-36,)
+step=55, T=Decimal('0.56'), stage=0, iter=2, loss=0.020962549351292943, info=(1.6529072043040402e-35,)
+step=55, T=Decimal('0.56'), stage=0, iter=3, loss=0.020962545303072618, info=(1.5196042508136843e-35,)
+step=55, T=Decimal('0.56'), stage=0, iter=4, loss=0.020962544506505677, info=(1.680448741348303e-35,)
+step=55, T=Decimal('0.56'), stage=0, iter=5, loss=0.020962535159571267, info=(1.765276615177589e-35,)
+step=55, T=Decimal('0.56'), stage=0, loss=6.0231980885977855e-12
+step=55, T=Decimal('0.56'), err=(4.721845068862055, 1.051923144012687), loss=[6.0231980885977855e-12], training_time=21.540397746488452
+step=56, T=Decimal('0.57'), stage=0, iter=0, loss=0.020962560497416134, info=(3.605924220717099e-35,)
+step=56, T=Decimal('0.57'), stage=0, iter=1, loss=0.021017088674750085, info=(1.6146181878430004e-35,)
+step=56, T=Decimal('0.57'), stage=0, iter=2, loss=0.021017478066562567, info=(3.4348517467948596e-35,)
+step=56, T=Decimal('0.57'), stage=0, iter=3, loss=0.02101750826312762, info=(1.798054569164891e-35,)
+step=56, T=Decimal('0.57'), stage=0, iter=4, loss=0.02101752537177738, info=(2.604490544281317e-35,)
+step=56, T=Decimal('0.57'), stage=0, iter=5, loss=0.021017506016439327, info=(1.1629894413442683e-35,)
+step=56, T=Decimal('0.57'), stage=0, loss=2.651901177697658e-13
+step=56, T=Decimal('0.57'), err=(4.699319012922763, 1.052855420559383), loss=[2.651901177697658e-13], training_time=21.853652082616463
+step=57, T=Decimal('0.58'), stage=0, iter=0, loss=0.021017542302547654, info=(1.5949389602170043e-35,)
+step=57, T=Decimal('0.58'), stage=0, iter=1, loss=0.021071753565676872, info=(2.5694108914250737e-35,)
+step=57, T=Decimal('0.58'), stage=0, iter=2, loss=0.021071917278645984, info=(3.108869671519681e-35,)
+step=57, T=Decimal('0.58'), stage=0, iter=3, loss=0.02107186892560037, info=(1.4009249521427873e-35,)
+step=57, T=Decimal('0.58'), stage=0, iter=4, loss=0.02107190937593007, info=(1.2038408833875603e-35,)
+step=57, T=Decimal('0.58'), stage=0, iter=5, loss=0.021071896788788697, info=(9.561969974619959e-36,)
+step=57, T=Decimal('0.58'), stage=0, loss=8.003129208070743e-13
+step=57, T=Decimal('0.58'), err=(4.67697880843453, 1.0538071138297203), loss=[8.003129208070743e-13], training_time=22.16578766074963
+step=58, T=Decimal('0.59'), stage=0, iter=0, loss=0.021071922077342802, info=(3.4623330259652004e-36,)
+step=58, T=Decimal('0.59'), stage=0, iter=1, loss=0.02112538972983144, info=(9.86800530838314e-36,)
+step=58, T=Decimal('0.59'), stage=0, iter=2, loss=0.02112566905390142, info=(2.1176864351201899e-35,)
+step=58, T=Decimal('0.59'), stage=0, iter=3, loss=0.02112561291002409, info=(1.0430334857838117e-35,)
+step=58, T=Decimal('0.59'), stage=0, iter=4, loss=0.021125658075734202, info=(9.045116932383529e-36,)
+step=58, T=Decimal('0.59'), stage=0, iter=5, loss=0.021125661652734367, info=(1.6030197234106527e-35,)
+step=58, T=Decimal('0.59'), stage=0, loss=3.160883379498619e-13
+step=58, T=Decimal('0.59'), err=(4.654753190864834, 1.0547626486359338), loss=[3.160883379498619e-13], training_time=22.474814193788916
+step=59, T=Decimal('0.60'), stage=0, iter=0, loss=0.021125694164347918, info=(2.2205994454901844e-35,)
+step=59, T=Decimal('0.60'), stage=0, iter=1, loss=0.02117868522974604, info=(2.841509350287328e-35,)
+step=59, T=Decimal('0.60'), stage=0, iter=2, loss=0.021178846408971976, info=(3.088837336455405e-35,)
+step=59, T=Decimal('0.60'), stage=0, iter=3, loss=0.021178850157497615, info=(1.962871949359082e-35,)
+step=59, T=Decimal('0.60'), stage=0, iter=4, loss=0.021178855485442398, info=(2.6249384349657074e-35,)
+step=59, T=Decimal('0.60'), stage=0, iter=5, loss=0.02117881688518109, info=(9.251664290285429e-36,)
+step=59, T=Decimal('0.60'), stage=0, loss=2.2948127735812863e-12
+step=59, T=Decimal('0.60'), err=(4.6326532925951245, 1.0557248472886156), loss=[2.2948127735812863e-12], training_time=22.783732624724507
+step=60, T=Decimal('0.61'), stage=0, iter=0, loss=0.02117887977202043, info=(1.9343229675437763e-36,)
+step=60, T=Decimal('0.61'), stage=0, iter=1, loss=0.02123112979962927, info=(4.6989999243121527e-35,)
+step=60, T=Decimal('0.61'), stage=0, iter=2, loss=0.02123148954642497, info=(1.6415784348951752e-35,)
+step=60, T=Decimal('0.61'), stage=0, iter=3, loss=0.021231486584074637, info=(7.542498804527966e-36,)
+step=60, T=Decimal('0.61'), stage=0, iter=4, loss=0.02123143598841253, info=(2.15391044435434e-35,)
+step=60, T=Decimal('0.61'), stage=0, iter=5, loss=0.021231455820534317, info=(1.0649344579554584e-35,)
+step=60, T=Decimal('0.61'), stage=0, loss=6.261355192919109e-12
+step=60, T=Decimal('0.61'), err=(4.610676865664286, 1.0566935092732797), loss=[6.261355192919109e-12], training_time=23.090676211751997
+step=61, T=Decimal('0.62'), stage=0, iter=0, loss=0.02123144765066345, info=(1.1115978634006785e-35,)
+step=61, T=Decimal('0.62'), stage=0, iter=1, loss=0.021283259706984147, info=(1.8728914584770014e-35,)
+step=61, T=Decimal('0.62'), stage=0, iter=2, loss=0.02128341833077264, info=(1.7008332081431592e-35,)
+step=61, T=Decimal('0.62'), stage=0, iter=3, loss=0.021283410608179242, info=(1.423813729869983e-35,)
+step=61, T=Decimal('0.62'), stage=0, iter=4, loss=0.021283415797743937, info=(1.998128313798949e-35,)
+step=61, T=Decimal('0.62'), stage=0, iter=5, loss=0.021283429371164432, info=(1.8443109606359693e-35,)
+step=61, T=Decimal('0.62'), stage=0, loss=6.613353014270382e-13
+step=61, T=Decimal('0.62'), err=(4.588889168226287, 1.0576839697108174), loss=[6.613353014270382e-13], training_time=23.395607500569895
+step=62, T=Decimal('0.63'), stage=0, iter=0, loss=0.02128345186629677, info=(2.0264476365396247e-36,)
+step=62, T=Decimal('0.63'), stage=0, iter=1, loss=0.021334609481213556, info=(2.37376670280453e-35,)
+step=62, T=Decimal('0.63'), stage=0, iter=2, loss=0.0213348490000401, info=(3.065564858545825e-35,)
+step=62, T=Decimal('0.63'), stage=0, iter=3, loss=0.021334857023222728, info=(3.3644926988782294e-35,)
+step=62, T=Decimal('0.63'), stage=0, iter=4, loss=0.021334846250895496, info=(1.2900063986155718e-35,)
+step=62, T=Decimal('0.63'), stage=0, iter=5, loss=0.02133482833880274, info=(1.508944947822515e-35,)
+step=62, T=Decimal('0.63'), stage=0, loss=2.1223871537590696e-12
+step=62, T=Decimal('0.63'), err=(4.567231467390721, 1.0586831543113515), loss=[2.1223871537590696e-12], training_time=23.699443445540965
+step=63, T=Decimal('0.64'), stage=0, iter=0, loss=0.0213348938409043, info=(4.655229777007476e-36,)
+step=63, T=Decimal('0.64'), stage=0, iter=1, loss=0.02138561187978134, info=(7.762261864298854e-36,)
+step=63, T=Decimal('0.64'), stage=0, iter=2, loss=0.021385725359777865, info=(3.309521047075276e-35,)
+step=63, T=Decimal('0.64'), stage=0, iter=3, loss=0.021385736588229922, info=(2.2809802787824157e-35,)
+step=63, T=Decimal('0.64'), stage=0, iter=4, loss=0.021385740696275007, info=(8.901166944550319e-36,)
+step=63, T=Decimal('0.64'), stage=0, iter=5, loss=0.021385724202694557, info=(8.785720398837144e-36,)
+step=63, T=Decimal('0.64'), stage=0, loss=1.6472126916589108e-13
+step=63, T=Decimal('0.64'), err=(4.5457443596682845, 1.0597008279768914), loss=[1.6472126916589108e-13], training_time=24.006086913403124
+step=64, T=Decimal('0.65'), stage=0, iter=0, loss=0.021385740787116587, info=(1.810272843856538e-36,)
+step=64, T=Decimal('0.65'), stage=0, iter=1, loss=0.021435979511824573, info=(2.688087176743753e-35,)
+step=64, T=Decimal('0.65'), stage=0, iter=2, loss=0.02143597333424627, info=(2.7014325962510626e-35,)
+step=64, T=Decimal('0.65'), stage=0, iter=3, loss=0.02143600388318385, info=(7.540856527569327e-36,)
+step=64, T=Decimal('0.65'), stage=0, iter=4, loss=0.021435984490061392, info=(1.3974246565560212e-35,)
+step=64, T=Decimal('0.65'), stage=0, iter=5, loss=0.02143597255257129, info=(1.414861132177725e-35,)
+step=64, T=Decimal('0.65'), stage=0, loss=5.07735877895587e-12
+step=64, T=Decimal('0.65'), err=(4.524356775705014, 1.0607207834828156), loss=[5.07735877895587e-12], training_time=24.313122960273176
+step=65, T=Decimal('0.66'), stage=0, iter=0, loss=0.02143602251639052, info=(3.2237211186382416e-36,)
+step=65, T=Decimal('0.66'), stage=0, iter=1, loss=0.021485802370807577, info=(2.326928734355439e-35,)
+step=65, T=Decimal('0.66'), stage=0, iter=2, loss=0.021485723015163306, info=(1.6256774774678262e-35,)
+step=65, T=Decimal('0.66'), stage=0, iter=3, loss=0.021485707399472087, info=(1.0737950766585957e-35,)
+step=65, T=Decimal('0.66'), stage=0, iter=4, loss=0.021485685769061923, info=(2.5898521096866964e-35,)
+step=65, T=Decimal('0.66'), stage=0, iter=5, loss=0.021485722044980067, info=(1.1556455432573652e-35,)
+step=65, T=Decimal('0.66'), stage=0, loss=1.1241051436477987e-11
+step=65, T=Decimal('0.66'), err=(4.503085484019457, 1.0617471396034617), loss=[1.1241051436477987e-11], training_time=24.62271494232118
+step=66, T=Decimal('0.67'), stage=0, iter=0, loss=0.0214857210982704, info=(1.9450142317181607e-36,)
+step=66, T=Decimal('0.67'), stage=0, iter=1, loss=0.021534638322228426, info=(1.5404257254265867e-35,)
+step=66, T=Decimal('0.67'), stage=0, iter=2, loss=0.02153483556410042, info=(1.7170389446233834e-35,)
+step=66, T=Decimal('0.67'), stage=0, iter=3, loss=0.021534845131550632, info=(2.1672895847078942e-35,)
+step=66, T=Decimal('0.67'), stage=0, iter=4, loss=0.02153485296050293, info=(1.518533291086223e-35,)
+step=66, T=Decimal('0.67'), stage=0, iter=5, loss=0.021534786297372068, info=(6.908939348365445e-36,)
+step=66, T=Decimal('0.67'), stage=0, loss=7.773854487953543e-13
+step=66, T=Decimal('0.67'), err=(4.482016667716812, 1.0628005577986679), loss=[7.773854487953543e-13], training_time=24.92906005238183
+step=67, T=Decimal('0.68'), stage=0, iter=0, loss=0.021534842252288244, info=(1.6543406269926565e-35,)
+step=67, T=Decimal('0.68'), stage=0, iter=1, loss=0.021583106086907687, info=(2.1907415723138713e-35,)
+step=67, T=Decimal('0.68'), stage=0, iter=2, loss=0.02158339481940956, info=(1.0105387151584898e-35,)
+step=67, T=Decimal('0.68'), stage=0, iter=3, loss=0.021583386728987967, info=(1.4078636261028928e-35,)
+step=67, T=Decimal('0.68'), stage=0, iter=4, loss=0.02158339098662525, info=(1.3317002878431513e-35,)
+step=67, T=Decimal('0.68'), stage=0, iter=5, loss=0.02158339082209503, info=(1.7587382148370654e-35,)
+step=67, T=Decimal('0.68'), stage=0, loss=7.683060473151055e-12
+step=67, T=Decimal('0.68'), err=(4.461043966249707, 1.063856242491499), loss=[7.683060473151055e-12], training_time=25.23781257448718
+step=68, T=Decimal('0.69'), stage=0, iter=0, loss=0.02158340833540621, info=(2.9039270476294937e-36,)
+step=68, T=Decimal('0.69'), stage=0, iter=1, loss=0.0216311299283562, info=(1.0402281266156293e-35,)
+step=68, T=Decimal('0.69'), stage=0, iter=2, loss=0.02163136769581806, info=(2.155580487201269e-35,)
+step=68, T=Decimal('0.69'), stage=0, iter=3, loss=0.021631374715893666, info=(2.1392919552815404e-35,)
+step=68, T=Decimal('0.69'), stage=0, iter=4, loss=0.02163138333739529, info=(8.505965083736236e-36,)
+step=68, T=Decimal('0.69'), stage=0, iter=5, loss=0.021631372574930037, info=(1.232344899479448e-35,)
+step=68, T=Decimal('0.69'), stage=0, loss=1.615266456169183e-11
+step=68, T=Decimal('0.69'), err=(4.440182428347676, 1.0649179373926991), loss=[1.615266456169183e-11], training_time=25.542179667623714
+step=69, T=Decimal('0.70'), stage=0, iter=0, loss=0.02163143663109374, info=(3.6045418319410664e-35,)
+step=69, T=Decimal('0.70'), stage=0, iter=1, loss=0.0216788105488869, info=(1.8435777115963329e-35,)
+step=69, T=Decimal('0.70'), stage=0, iter=2, loss=0.021678865396379424, info=(1.3195383982925784e-35,)
+step=69, T=Decimal('0.70'), stage=0, iter=3, loss=0.02167886586866353, info=(1.5703888497101657e-35,)
+step=69, T=Decimal('0.70'), stage=0, iter=4, loss=0.021678878583858804, info=(1.9094319414404894e-35,)
+step=69, T=Decimal('0.70'), stage=0, iter=5, loss=0.021678830075790485, info=(1.6807444085980428e-35,)
+step=69, T=Decimal('0.70'), stage=0, loss=1.7941390536970804e-13
+step=69, T=Decimal('0.70'), err=(4.419548389575143, 1.0660138942704456), loss=[1.7941390536970804e-13], training_time=25.84139378857799
+step=70, T=Decimal('0.71'), stage=0, iter=0, loss=0.021678865979539316, info=(2.5712030324199917e-36,)
+step=70, T=Decimal('0.71'), stage=0, iter=1, loss=0.021725571210819805, info=(1.8582803592917831e-35,)
+step=70, T=Decimal('0.71'), stage=0, iter=2, loss=0.021725770841546886, info=(2.2531807413911337e-35,)
+step=70, T=Decimal('0.71'), stage=0, iter=3, loss=0.021725720163419813, info=(1.5101096802011316e-35,)
+step=70, T=Decimal('0.71'), stage=0, iter=4, loss=0.021725754336771014, info=(4.951275619582224e-36,)
+step=70, T=Decimal('0.71'), stage=0, iter=5, loss=0.021725754349007947, info=(1.536095107810886e-35,)
+step=70, T=Decimal('0.71'), stage=0, loss=4.363475321524822e-12
+step=70, T=Decimal('0.71'), err=(4.399013860322088, 1.0671137330680962), loss=[4.363475321524822e-12], training_time=26.141129021532834
+step=71, T=Decimal('0.72'), stage=0, iter=0, loss=0.021725778043786816, info=(2.556210557666411e-36,)
+step=71, T=Decimal('0.72'), stage=0, iter=1, loss=0.02177203470847439, info=(1.4535520006809376e-35,)
+step=71, T=Decimal('0.72'), stage=0, iter=2, loss=0.021772122071359035, info=(2.1412524996315507e-35,)
+step=71, T=Decimal('0.72'), stage=0, iter=3, loss=0.021772085260863848, info=(1.4324360067619977e-35,)
+step=71, T=Decimal('0.72'), stage=0, iter=4, loss=0.021772103799219275, info=(1.4597602954606622e-35,)
+step=71, T=Decimal('0.72'), stage=0, iter=5, loss=0.021772086837499083, info=(1.8890702900267098e-35,)
+step=71, T=Decimal('0.72'), stage=0, loss=5.340115029631155e-12
+step=71, T=Decimal('0.72'), err=(4.378613221875696, 1.0682259805385808), loss=[5.340115029631155e-12], training_time=26.441475522704422
+step=72, T=Decimal('0.73'), stage=0, iter=0, loss=0.021772126394064565, info=(7.931364367132411e-36,)
+step=72, T=Decimal('0.73'), stage=0, iter=1, loss=0.021817522173649143, info=(2.5988767408462534e-35,)
+step=72, T=Decimal('0.73'), stage=0, iter=2, loss=0.021817875425184055, info=(2.4574934116376965e-35,)
+step=72, T=Decimal('0.73'), stage=0, iter=3, loss=0.021817922276481733, info=(1.3986292799782816e-35,)
+step=72, T=Decimal('0.73'), stage=0, iter=4, loss=0.02181793388317045, info=(2.3455900659071496e-35,)
+step=72, T=Decimal('0.73'), stage=0, iter=5, loss=0.021817911656072712, info=(3.395393477926877e-35,)
+step=72, T=Decimal('0.73'), stage=0, loss=3.315715228408135e-14
+step=72, T=Decimal('0.73'), err=(4.3584024575102145, 1.0693646521504776), loss=[3.315715228408135e-14], training_time=26.742128111654893
+step=73, T=Decimal('0.74'), stage=0, iter=0, loss=0.021817922957498632, info=(5.784797101972589e-36,)
+step=73, T=Decimal('0.74'), stage=0, iter=1, loss=0.021863145152277955, info=(1.0732337321883301e-35,)
+step=73, T=Decimal('0.74'), stage=0, iter=2, loss=0.021863130523824537, info=(5.948986494350032e-36,)
+step=73, T=Decimal('0.74'), stage=0, iter=3, loss=0.021863174701017774, info=(9.377403586216433e-36,)
+step=73, T=Decimal('0.74'), stage=0, iter=4, loss=0.02186316198320032, info=(1.458293295156019e-35,)
+step=73, T=Decimal('0.74'), stage=0, iter=5, loss=0.0218631430769276, info=(1.8446153809564368e-35,)
+step=73, T=Decimal('0.74'), stage=0, loss=2.6895669865182446e-13
+step=73, T=Decimal('0.74'), err=(4.338321360122466, 1.0705154054559969), loss=[2.6895669865182446e-13], training_time=27.03915468067862
+step=74, T=Decimal('0.75'), stage=0, iter=0, loss=0.021863169626921995, info=(1.2188285583173012e-35,)
+step=74, T=Decimal('0.75'), stage=0, iter=1, loss=0.021907792612174078, info=(2.0926456216841976e-35,)
+step=74, T=Decimal('0.75'), stage=0, iter=2, loss=0.021907853720095925, info=(1.8712311731515384e-35,)
+step=74, T=Decimal('0.75'), stage=0, iter=3, loss=0.02190787620235311, info=(1.5974150317787227e-35,)
+step=74, T=Decimal('0.75'), stage=0, iter=4, loss=0.02190785566781048, info=(1.3228609778449814e-35,)
+step=74, T=Decimal('0.75'), stage=0, iter=5, loss=0.02190786463792661, info=(1.3141352425268261e-35,)
+step=74, T=Decimal('0.75'), stage=0, loss=5.312140533092414e-12
+step=74, T=Decimal('0.75'), err=(4.318334953095471, 1.0716698225777603), loss=[5.312140533092414e-12], training_time=27.33687494066544
+step=75, T=Decimal('0.76'), stage=0, iter=0, loss=0.021907896859466883, info=(5.8321289420844184e-36,)
+step=75, T=Decimal('0.76'), stage=0, iter=1, loss=0.021952117369658627, info=(2.0915671285761924e-35,)
+step=75, T=Decimal('0.76'), stage=0, iter=2, loss=0.021952023093413337, info=(9.232468519193967e-36,)
+step=75, T=Decimal('0.76'), stage=0, iter=3, loss=0.021952057973846188, info=(1.2748158031003008e-35,)
+step=75, T=Decimal('0.76'), stage=0, iter=4, loss=0.02195202669542734, info=(5.155355615989691e-36,)
+step=75, T=Decimal('0.76'), stage=0, iter=5, loss=0.021952036750846057, info=(1.0897618256093646e-35,)
+step=75, T=Decimal('0.76'), stage=0, loss=3.381200084646664e-13
+step=75, T=Decimal('0.76'), err=(4.298554896230238, 1.0728558855950185), loss=[3.381200084646664e-13], training_time=27.637496993644163
+step=76, T=Decimal('0.77'), stage=0, iter=0, loss=0.02195207379603437, info=(4.074476053259285e-36,)
+step=76, T=Decimal('0.77'), stage=0, iter=1, loss=0.02199547549745345, info=(1.8177585205839208e-35,)
+step=76, T=Decimal('0.77'), stage=0, iter=2, loss=0.021995671938853722, info=(9.729684549478489e-36,)
+step=76, T=Decimal('0.77'), stage=0, iter=3, loss=0.021995672058136413, info=(2.1391191180079115e-35,)
+step=76, T=Decimal('0.77'), stage=0, iter=4, loss=0.02199571759948857, info=(1.2563850647397244e-35,)
+step=76, T=Decimal('0.77'), stage=0, iter=5, loss=0.021995697114695213, info=(1.2113649368891923e-35,)
+step=76, T=Decimal('0.77'), stage=0, loss=8.88512641801364e-12
+step=76, T=Decimal('0.77'), err=(4.278824656868065, 1.0740348929248347), loss=[8.88512641801364e-12], training_time=27.937103322707117
+step=77, T=Decimal('0.78'), stage=0, iter=0, loss=0.02199573479121816, info=(1.4709221479067473e-36,)
+step=77, T=Decimal('0.78'), stage=0, iter=1, loss=0.022038615343385557, info=(2.0482693467575104e-35,)
+step=77, T=Decimal('0.78'), stage=0, iter=2, loss=0.02203880675182318, info=(2.1754827458948142e-35,)
+step=77, T=Decimal('0.78'), stage=0, iter=3, loss=0.022038801147149803, info=(1.0248170541630979e-35,)
+step=77, T=Decimal('0.78'), stage=0, iter=4, loss=0.022038821670174617, info=(6.205124302712434e-36,)
+step=77, T=Decimal('0.78'), stage=0, iter=5, loss=0.02203881374561682, info=(6.330468992995888e-36,)
+step=77, T=Decimal('0.78'), stage=0, loss=6.06445861359865e-12
+step=77, T=Decimal('0.78'), err=(4.259242160167764, 1.0752314863263845), loss=[6.06445861359865e-12], training_time=28.236672055674717
+step=78, T=Decimal('0.79'), stage=0, iter=0, loss=0.02203882458957595, info=(2.4302128281605445e-35,)
+step=78, T=Decimal('0.79'), stage=0, iter=1, loss=0.022080985231379007, info=(1.266105062796753e-35,)
+step=78, T=Decimal('0.79'), stage=0, iter=2, loss=0.022081393908495863, info=(1.6612660281164517e-35,)
+step=78, T=Decimal('0.79'), stage=0, iter=3, loss=0.022081379969728688, info=(7.853024750560311e-36,)
+step=78, T=Decimal('0.79'), stage=0, iter=4, loss=0.022081380883326698, info=(1.4735110108412495e-35,)
+step=78, T=Decimal('0.79'), stage=0, iter=5, loss=0.022081352800562067, info=(1.0338996564796045e-35,)
+step=78, T=Decimal('0.79'), stage=0, loss=3.026523723930848e-12
+step=78, T=Decimal('0.79'), err=(4.239812470358892, 1.076447293652232), loss=[3.026523723930848e-12], training_time=28.537643403746188
+step=79, T=Decimal('0.80'), stage=0, iter=0, loss=0.022081403575563582, info=(7.079256536338353e-36,)
+step=79, T=Decimal('0.80'), stage=0, iter=1, loss=0.022123169099787687, info=(8.833439701063426e-36,)
+step=79, T=Decimal('0.80'), stage=0, iter=2, loss=0.02212343155056814, info=(2.1418880299635566e-35,)
+step=79, T=Decimal('0.80'), stage=0, iter=3, loss=0.022123440604937875, info=(3.6259859515962695e-35,)
+step=79, T=Decimal('0.80'), stage=0, iter=4, loss=0.022123438796725178, info=(2.1115434296385148e-35,)
+step=79, T=Decimal('0.80'), stage=0, iter=5, loss=0.022123457616145783, info=(7.887545570073138e-36,)
+step=79, T=Decimal('0.80'), stage=0, loss=1.0950508851257525e-12
+step=79, T=Decimal('0.80'), err=(4.220534313515906, 1.0776823562865485), loss=[1.0950508851257525e-12], training_time=28.83934911270626
+step=80, T=Decimal('0.81'), stage=0, iter=0, loss=0.02212347209555289, info=(3.051854311806106e-36,)
+step=80, T=Decimal('0.81'), stage=0, iter=1, loss=0.022164694657530112, info=(1.2986793285234362e-35,)
+step=80, T=Decimal('0.81'), stage=0, iter=2, loss=0.02216499589606122, info=(1.1778163539454572e-35,)
+step=80, T=Decimal('0.81'), stage=0, iter=3, loss=0.02216499209470226, info=(1.877873103664684e-35,)
+step=80, T=Decimal('0.81'), stage=0, iter=4, loss=0.022164991157959196, info=(1.808422222709278e-35,)
+step=80, T=Decimal('0.81'), stage=0, iter=5, loss=0.02216496429551894, info=(6.252543704646577e-36,)
+step=80, T=Decimal('0.81'), stage=0, loss=1.930657095777034e-12
+step=80, T=Decimal('0.81'), err=(4.201381478163844, 1.0789303072161913), loss=[1.930657095777034e-12], training_time=29.14127376070246
+step=81, T=Decimal('0.82'), stage=0, iter=0, loss=0.022164994811078448, info=(1.0956264025624585e-35,)
+step=81, T=Decimal('0.82'), stage=0, iter=1, loss=0.02220583950981778, info=(1.177052397411793e-35,)
+step=81, T=Decimal('0.82'), stage=0, iter=2, loss=0.022205994623270647, info=(1.378962421490122e-35,)
+step=81, T=Decimal('0.82'), stage=0, iter=3, loss=0.02220601042097566, info=(9.357509721861208e-36,)
+step=81, T=Decimal('0.82'), stage=0, iter=4, loss=0.02220596333478655, info=(1.1932244130457709e-35,)
+step=81, T=Decimal('0.82'), stage=0, iter=5, loss=0.0222060048465625, info=(3.080332149820992e-35,)
+step=81, T=Decimal('0.82'), stage=0, loss=8.589359104714063e-12
+step=81, T=Decimal('0.82'), err=(4.182325492474727, 1.0801840448700928), loss=[8.589359104714063e-12], training_time=29.441958768758923
+step=82, T=Decimal('0.83'), stage=0, iter=0, loss=0.022206023891430025, info=(2.6347944956178926e-36,)
+step=82, T=Decimal('0.83'), stage=0, iter=1, loss=0.022246177349408636, info=(1.2588077999227426e-35,)
+step=82, T=Decimal('0.83'), stage=0, iter=2, loss=0.02224650276389275, info=(1.5740657133875913e-35,)
+step=82, T=Decimal('0.83'), stage=0, iter=3, loss=0.022246479002078174, info=(1.6803913441632046e-35,)
+step=82, T=Decimal('0.83'), stage=0, iter=4, loss=0.02224647935951733, info=(1.6315280442914226e-35,)
+step=82, T=Decimal('0.83'), stage=0, iter=5, loss=0.022246474690183926, info=(9.046518858629565e-36,)
+step=82, T=Decimal('0.83'), stage=0, loss=5.907724934091814e-12
+step=82, T=Decimal('0.83'), err=(4.163414174409276, 1.0814561179481708), loss=[5.907724934091814e-12], training_time=29.741531087784097
+step=83, T=Decimal('0.84'), stage=0, iter=0, loss=0.022246513771924006, info=(2.3393216588958984e-36,)
+step=83, T=Decimal('0.84'), stage=0, iter=1, loss=0.022286116409341288, info=(1.2475204999801115e-35,)
+step=83, T=Decimal('0.84'), stage=0, iter=2, loss=0.02228647078221202, info=(8.98999411074432e-36,)
+step=83, T=Decimal('0.84'), stage=0, iter=3, loss=0.022286478228951582, info=(2.4286816031407175e-35,)
+step=83, T=Decimal('0.84'), stage=0, iter=4, loss=0.02228648161712737, info=(4.896365884992695e-36,)
+step=83, T=Decimal('0.84'), stage=0, iter=5, loss=0.022286463776434368, info=(4.2582404827555706e-36,)
+step=83, T=Decimal('0.84'), stage=0, loss=4.831248644463813e-13
+step=83, T=Decimal('0.84'), err=(4.144677074766965, 1.0827545885333623), loss=[4.831248644463813e-13], training_time=30.039769334951416
+step=84, T=Decimal('0.85'), stage=0, iter=0, loss=0.022286492822385876, info=(8.532499734488201e-36,)
+step=84, T=Decimal('0.85'), stage=0, iter=1, loss=0.022325782013629527, info=(2.264034118614418e-35,)
+step=84, T=Decimal('0.85'), stage=0, iter=2, loss=0.022325930844963593, info=(1.0952791300269812e-35,)
+step=84, T=Decimal('0.85'), stage=0, iter=3, loss=0.022325962480998975, info=(1.0994204804248185e-35,)
+step=84, T=Decimal('0.85'), stage=0, iter=4, loss=0.022325933752977988, info=(1.8156585010741202e-35,)
+step=84, T=Decimal('0.85'), stage=0, iter=5, loss=0.02232592630916505, info=(9.146680533950944e-36,)
+step=84, T=Decimal('0.85'), stage=0, loss=4.759390773436391e-12
+step=84, T=Decimal('0.85'), err=(4.126036109179992, 1.084059419677888), loss=[4.759390773436391e-12], training_time=30.338689784985036
+step=85, T=Decimal('0.86'), stage=0, iter=0, loss=0.022325975458038168, info=(1.110412306461865e-35,)
+step=85, T=Decimal('0.86'), stage=0, iter=1, loss=0.02236464634235329, info=(1.592980668750957e-35,)
+step=85, T=Decimal('0.86'), stage=0, iter=2, loss=0.02236492560575235, info=(1.5282696473410045e-35,)
+step=85, T=Decimal('0.86'), stage=0, iter=3, loss=0.022364897722589032, info=(7.524791055460188e-36,)
+step=85, T=Decimal('0.86'), stage=0, iter=4, loss=0.022364948438052184, info=(1.918197065576919e-35,)
+step=85, T=Decimal('0.86'), stage=0, iter=5, loss=0.022364913287540013, info=(1.3272908925909025e-35,)
+step=85, T=Decimal('0.86'), stage=0, loss=5.122523212046614e-12
+step=85, T=Decimal('0.86'), err=(4.1075244320356035, 1.0853795037027691), loss=[5.122523212046614e-12], training_time=30.63919363101013
+step=86, T=Decimal('0.87'), stage=0, iter=0, loss=0.022364931577362985, info=(6.290230330818675e-36,)
+step=86, T=Decimal('0.87'), stage=0, iter=1, loss=0.022403029637028317, info=(1.325430219342964e-35,)
+step=86, T=Decimal('0.87'), stage=0, iter=2, loss=0.022403403366105638, info=(1.8642531103731585e-35,)
+step=86, T=Decimal('0.87'), stage=0, iter=3, loss=0.022403399524861943, info=(9.341907732021742e-36,)
+step=86, T=Decimal('0.87'), stage=0, iter=4, loss=0.022403374733609892, info=(1.45517885214608e-35,)
+step=86, T=Decimal('0.87'), stage=0, iter=5, loss=0.022403359584418872, info=(1.1734644993712704e-35,)
+step=86, T=Decimal('0.87'), stage=0, loss=5.5479531159235214e-12
+step=86, T=Decimal('0.87'), err=(4.089141103548994, 1.0867148745931514), loss=[5.5479531159235214e-12], training_time=30.940317226806656
+step=87, T=Decimal('0.88'), stage=0, iter=0, loss=0.022403375811705623, info=(4.782206271120005e-36,)
+step=87, T=Decimal('0.88'), stage=0, iter=1, loss=0.022441084707072456, info=(2.3984317799175698e-35,)
+step=87, T=Decimal('0.88'), stage=0, iter=2, loss=0.022441318875344698, info=(2.789050547247998e-35,)
+step=87, T=Decimal('0.88'), stage=0, iter=3, loss=0.02244129168349291, info=(1.0878088863863796e-35,)
+step=87, T=Decimal('0.88'), stage=0, iter=4, loss=0.022441311149812147, info=(1.331067555623919e-35,)
+step=87, T=Decimal('0.88'), stage=0, iter=5, loss=0.022441312362778246, info=(6.186327442057409e-36,)
+step=87, T=Decimal('0.88'), stage=0, loss=3.720123522146345e-12
+step=87, T=Decimal('0.88'), err=(4.070898396772812, 1.0880690956644474), loss=[3.720123522146345e-12], training_time=31.23867919971235
+step=88, T=Decimal('0.89'), stage=0, iter=0, loss=0.022441326026367815, info=(1.0670479333023908e-36,)
+step=88, T=Decimal('0.89'), stage=0, iter=1, loss=0.022478560671969714, info=(1.8610372178385575e-35,)
+step=88, T=Decimal('0.89'), stage=0, iter=2, loss=0.022478748050410162, info=(1.1116710486263688e-35,)
+step=88, T=Decimal('0.89'), stage=0, iter=3, loss=0.022478764872565893, info=(7.311244828300309e-36,)
+step=88, T=Decimal('0.89'), stage=0, iter=4, loss=0.022478754676721217, info=(1.8934263058968165e-35,)
+step=88, T=Decimal('0.89'), stage=0, iter=5, loss=0.022478746636502053, info=(1.0198968957099519e-35,)
+step=88, T=Decimal('0.89'), stage=0, loss=1.0718367630709994e-11
+step=88, T=Decimal('0.89'), err=(4.0527535015807175, 1.0894310020832063), loss=[1.0718367630709994e-11], training_time=31.536464367527515
+step=89, T=Decimal('0.90'), stage=0, iter=0, loss=0.02247878167105092, info=(2.2200530740653406e-36,)
+step=89, T=Decimal('0.90'), stage=0, iter=1, loss=0.022515491136253687, info=(3.018931726301054e-35,)
+step=89, T=Decimal('0.90'), stage=0, iter=2, loss=0.02251575310808846, info=(9.773273406772102e-36,)
+step=89, T=Decimal('0.90'), stage=0, iter=3, loss=0.022515714330250937, info=(1.3945840698654846e-35,)
+step=89, T=Decimal('0.90'), stage=0, iter=4, loss=0.02251571570382914, info=(9.698141208942661e-36,)
+step=89, T=Decimal('0.90'), stage=0, iter=5, loss=0.022515731777496818, info=(9.26000266635065e-36,)
+step=89, T=Decimal('0.90'), stage=0, loss=3.001559194884601e-12
+step=89, T=Decimal('0.90'), err=(4.0347748263261805, 1.090819237889362), loss=[3.001559194884601e-12], training_time=31.83533039665781
+step=90, T=Decimal('0.91'), stage=0, iter=0, loss=0.022515757487254276, info=(4.227330799554325e-36,)
+step=90, T=Decimal('0.91'), stage=0, iter=1, loss=0.02255191840948433, info=(2.467347575614893e-35,)
+step=90, T=Decimal('0.91'), stage=0, iter=2, loss=0.022552177840304326, info=(1.1024300300789897e-35,)
+step=90, T=Decimal('0.91'), stage=0, iter=3, loss=0.022552196264994977, info=(7.02375595997216e-36,)
+step=90, T=Decimal('0.91'), stage=0, iter=4, loss=0.02255219210961849, info=(2.0138609539809964e-35,)
+step=90, T=Decimal('0.91'), stage=0, iter=5, loss=0.02255219197154774, info=(7.871004418792493e-36,)
+step=90, T=Decimal('0.91'), stage=0, loss=2.822577805406471e-12
+step=90, T=Decimal('0.91'), err=(4.016925953645601, 1.092224371151535), loss=[2.822577805406471e-12], training_time=32.13906467962079
+step=91, T=Decimal('0.92'), stage=0, iter=0, loss=0.022552233934772254, info=(1.1313865857928017e-35,)
+step=91, T=Decimal('0.92'), stage=0, iter=1, loss=0.022587988630420157, info=(3.3981078625566777e-35,)
+step=91, T=Decimal('0.92'), stage=0, iter=2, loss=0.022588211451689374, info=(9.006111240320047e-36,)
+step=91, T=Decimal('0.92'), stage=0, iter=3, loss=0.022588185159451633, info=(1.740222026417173e-35,)
+step=91, T=Decimal('0.92'), stage=0, iter=4, loss=0.022588172734890232, info=(2.287425982669005e-35,)
+step=91, T=Decimal('0.92'), stage=0, iter=5, loss=0.02258819030106266, info=(8.85261107835122e-36,)
+step=91, T=Decimal('0.92'), stage=0, loss=1.186509019223187e-11
+step=91, T=Decimal('0.92'), err=(3.999162817794987, 1.0936346572911522), loss=[1.186509019223187e-11], training_time=32.44002398964949
+step=92, T=Decimal('0.93'), stage=0, iter=0, loss=0.022588207116236183, info=(2.695347913442058e-36,)
+step=92, T=Decimal('0.93'), stage=0, iter=1, loss=0.02262338294761613, info=(1.2198532631004826e-35,)
+step=92, T=Decimal('0.93'), stage=0, iter=2, loss=0.02262368297094004, info=(1.8109300492192048e-35,)
+step=92, T=Decimal('0.93'), stage=0, iter=3, loss=0.022623681948600725, info=(1.8649768171307726e-35,)
+step=92, T=Decimal('0.93'), stage=0, iter=4, loss=0.0226237107713754, info=(8.454469764195269e-36,)
+step=92, T=Decimal('0.93'), stage=0, iter=5, loss=0.022623677640422137, info=(9.511439645253464e-36,)
+step=92, T=Decimal('0.93'), stage=0, loss=1.7721628948646407e-12
+step=92, T=Decimal('0.93'), err=(3.981577871894365, 1.0950756269376205), loss=[1.7721628948646407e-12], training_time=32.73875425453298
+step=93, T=Decimal('0.94'), stage=0, iter=0, loss=0.02262369279371092, info=(1.9941051664823727e-36,)
+step=93, T=Decimal('0.94'), stage=0, iter=1, loss=0.022658354902151342, info=(1.8686561201885648e-35,)
+step=93, T=Decimal('0.94'), stage=0, iter=2, loss=0.022658675793281083, info=(1.0754330488283511e-35,)
+step=93, T=Decimal('0.94'), stage=0, iter=3, loss=0.022658666955232654, info=(1.4582795198315957e-35,)
+step=93, T=Decimal('0.94'), stage=0, iter=4, loss=0.022658681046846634, info=(9.302726978543714e-36,)
+step=93, T=Decimal('0.94'), stage=0, iter=5, loss=0.02265867984869997, info=(1.3092792971745101e-35,)
+step=93, T=Decimal('0.94'), stage=0, loss=6.233855160540727e-12
+step=93, T=Decimal('0.94'), err=(3.9640925687707886, 1.0965260954813956), loss=[6.233855160540727e-12], training_time=33.03785072849132
+step=94, T=Decimal('0.95'), stage=0, iter=0, loss=0.022658706572198803, info=(6.332457987420353e-36,)
+step=94, T=Decimal('0.95'), stage=0, iter=1, loss=0.022693047386726162, info=(1.6525863540393382e-35,)
+step=94, T=Decimal('0.95'), stage=0, iter=2, loss=0.02269320072169015, info=(8.142166657819305e-36,)
+step=94, T=Decimal('0.95'), stage=0, iter=3, loss=0.02269320688648519, info=(1.4839464648105336e-35,)
+step=94, T=Decimal('0.95'), stage=0, iter=4, loss=0.02269319464390527, info=(1.3552888807496635e-35,)
+step=94, T=Decimal('0.95'), stage=0, iter=5, loss=0.022693196602157847, info=(7.76275906741477e-36,)
+step=94, T=Decimal('0.95'), stage=0, loss=3.958848067251656e-12
+step=94, T=Decimal('0.95'), err=(3.9467455832222855, 1.0979969980652482), loss=[3.958848067251656e-12], training_time=33.3377733125817
+step=95, T=Decimal('0.96'), stage=0, iter=0, loss=0.022693223193573794, info=(7.995950543227559e-36,)
+step=95, T=Decimal('0.96'), stage=0, iter=1, loss=0.022727069844772373, info=(1.1089560900247171e-35,)
+step=95, T=Decimal('0.96'), stage=0, iter=2, loss=0.022727235404608602, info=(8.607974948417794e-36,)
+step=95, T=Decimal('0.96'), stage=0, iter=3, loss=0.022727247844964445, info=(7.330737629824658e-36,)
+step=95, T=Decimal('0.96'), stage=0, iter=4, loss=0.022727235893706694, info=(1.4606516737452452e-35,)
+step=95, T=Decimal('0.96'), stage=0, iter=5, loss=0.02272724969177032, info=(1.1824763596571429e-35,)
+step=95, T=Decimal('0.96'), stage=0, loss=6.36726909861474e-12
+step=95, T=Decimal('0.96'), err=(3.929511675364683, 1.0994816366272968), loss=[6.36726909861474e-12], training_time=33.635886592557654
+step=96, T=Decimal('0.97'), stage=0, iter=0, loss=0.022727251268679294, info=(1.1125664083907205e-35,)
+step=96, T=Decimal('0.97'), stage=0, iter=1, loss=0.022760717803076484, info=(9.89054374804179e-36,)
+step=96, T=Decimal('0.97'), stage=0, iter=2, loss=0.022760756192471084, info=(7.931559884001294e-36,)
+step=96, T=Decimal('0.97'), stage=0, iter=3, loss=0.02276078078585424, info=(8.753833392655536e-36,)
+step=96, T=Decimal('0.97'), stage=0, iter=4, loss=0.02276078983249869, info=(1.0611840541346249e-35,)
+step=96, T=Decimal('0.97'), stage=0, iter=5, loss=0.02276079465809467, info=(7.388322073239787e-36,)
+step=96, T=Decimal('0.97'), stage=0, loss=8.773881244003227e-12
+step=96, T=Decimal('0.97'), err=(3.912393035378527, 1.100980875164608), loss=[8.773881244003227e-12], training_time=33.93806005362421
+step=97, T=Decimal('0.98'), stage=0, iter=0, loss=0.02276082095429904, info=(7.461791292118047e-36,)
+step=97, T=Decimal('0.98'), stage=0, iter=1, loss=0.02279356405571692, info=(9.270710828695633e-36,)
+step=97, T=Decimal('0.98'), stage=0, iter=2, loss=0.022793893954739776, info=(8.373759277439043e-36,)
+step=97, T=Decimal('0.98'), stage=0, iter=3, loss=0.022793892194539, info=(9.037652428461438e-36,)
+step=97, T=Decimal('0.98'), stage=0, iter=4, loss=0.022793870467518695, info=(1.3112457247359929e-35,)
+step=97, T=Decimal('0.98'), stage=0, iter=5, loss=0.022793887751867685, info=(9.273504636680316e-36,)
+step=97, T=Decimal('0.98'), stage=0, loss=3.5517700287728798e-12
+step=97, T=Decimal('0.98'), err=(3.8954248448225934, 1.1025049331965702), loss=[3.5517700287728798e-12], training_time=34.23900708556175
+step=98, T=Decimal('0.99'), stage=0, iter=0, loss=0.022793911353598074, info=(2.45633153659423e-36,)
+step=98, T=Decimal('0.99'), stage=0, iter=1, loss=0.022826369131833946, info=(1.1785652437180332e-35,)
+step=98, T=Decimal('0.99'), stage=0, iter=2, loss=0.022826540054339206, info=(1.620232134771027e-35,)
+step=98, T=Decimal('0.99'), stage=0, iter=3, loss=0.022826514089577338, info=(2.2877999970764044e-35,)
+step=98, T=Decimal('0.99'), stage=0, iter=4, loss=0.022826501885305477, info=(8.234366626102673e-36,)
+step=98, T=Decimal('0.99'), stage=0, iter=5, loss=0.02282649559919213, info=(1.1678836275711567e-35,)
+step=98, T=Decimal('0.99'), stage=0, loss=9.048323268722834e-12
+step=98, T=Decimal('0.99'), err=(3.878554310994166, 1.1040392212516665), loss=[9.048323268722834e-12], training_time=34.53817129251547
+step=99, T=Decimal('1.00'), stage=0, iter=0, loss=0.022826519847279556, info=(8.9613689387025e-37,)
+step=99, T=Decimal('1.00'), stage=0, iter=1, loss=0.02285843162590203, info=(1.838330945223355e-35,)
+step=99, T=Decimal('1.00'), stage=0, iter=2, loss=0.02285866628428503, info=(1.3884084914812665e-35,)
+step=99, T=Decimal('1.00'), stage=0, iter=3, loss=0.02285865734007146, info=(1.0304257635979843e-35,)
+step=99, T=Decimal('1.00'), stage=0, iter=4, loss=0.0228586350776105, info=(7.002181434290761e-36,)
+step=99, T=Decimal('1.00'), stage=0, iter=5, loss=0.022858647243587764, info=(5.718439220963904e-36,)
+step=99, T=Decimal('1.00'), stage=0, loss=1.542263838278652e-11
+Failed to load exact solution at T=Decimal('1.00'), if you are using the provided exact solution, only selected time steps are provided due to file size limitations, e=FileNotFoundError(2, 'No such file or directory')
+step=99, T=Decimal('1.00'), err=(nan, nan), loss=[1.542263838278652e-11], training_time=34.83796983049251
+Total time: 41.30 seconds
