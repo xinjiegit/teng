@@ -17,10 +17,13 @@ import jax.numpy as jnp
 import numpy as np
 
 from src.model import SimplePDENet3
+from src.sampler.quadrature_sampler import DiskSampler, CircleSampler
 from src.sampler import PeriodicQuadratureSampler
 from src.var_state import SimpleVarStateReal
 from src.operator import HeatOperatorNoLog, AllenCahnOperator, BurgersOperator
 from src.utils import RandomNaturalPolicyGradTDVP
+from scipy.interpolate import RegularGridInterpolator
+
 
 now = datetime.now()
 
@@ -44,6 +47,10 @@ def get_config():
     ### sampler configs ###
     parser.add_argument("--nb_samples", type=int, default=65536) # we used 262144 in the paper
     parser.add_argument("--sampler_seed", type=int, default=4321)
+
+    parser.add_argument("--nb_samples_boundary", type=int, default=20)
+    parser.add_argument("--boundary", type=bool, default=False)
+    parser.add_argument("--boundary_loss_weight", type=float, default=1.0)
 
     ### policy grad configs ###
     parser.add_argument("--policy_grad_nb_params", type=int, default=1536)
@@ -94,18 +101,38 @@ def loss_func(var_state, samples, sqrt_weights, u_target):
 class CompareWithExact:
     def __init__(self, points_per_dim=512, config=None):
 
+        self.config = config
         self.points_per_dim = points_per_dim
-        grid = jnp.linspace(0, 2 * jnp.pi, points_per_dim, endpoint=False)
-        grid2d = jnp.stack(jnp.meshgrid(grid, grid, indexing='ij'), axis=-1).reshape(1, -1, 2)
-        self.xs = grid2d
-        if config.equation == 'heat':
-            self.exact_solution_dir = 'heat_equation_2d_spectral_fourier'
-        elif config.equation == 'allen_cahn':
-            self.exact_solution_dir = 'allen_cahn_equation_2d_spectral_fourier'
-        elif config.equation == 'burgers':
-            self.exact_solution_dir = 'burgers_equation_2d_spectral_fourier'
+        if config.boundary:
+            radii = jnp.linspace(1 / points_per_dim, 1, points_per_dim)
+            angles = jnp.linspace(0, 2 * jnp.pi, points_per_dim, endpoint=False)
+            r_grid, theta_grid = jnp.meshgrid(radii, angles, indexing='ij')
+
+            x_grid = r_grid * jnp.cos(theta_grid)
+            y_grid = r_grid * jnp.sin(theta_grid)
+
+            grid2d = jnp.stack((x_grid, y_grid), axis=-1).reshape(1, -1, 2)
+            self.xs = grid2d
         else:
-            raise NotImplementedError
+            grid = jnp.linspace(0, 2 * jnp.pi, points_per_dim, endpoint=False)
+            grid2d = jnp.stack(jnp.meshgrid(grid, grid, indexing='ij'), axis=-1).reshape(1, -1, 2)
+            self.xs = grid2d
+
+        if config.boundary:
+            if config.equation == "heat":
+                self.exact_solution_dir = "heat_equation_2d_disk_bessel/heat_solution_files"
+            else:
+                raise NotImplementedError
+        else:
+            if config.equation == 'heat':
+                self.exact_solution_dir = 'heat_equation_2d_spectral_fourier'
+            elif config.equation == 'allen_cahn':
+                self.exact_solution_dir = 'allen_cahn_equation_2d_spectral_fourier'
+            elif config.equation == 'burgers':
+                self.exact_solution_dir = 'burgers_equation_2d_spectral_fourier'
+            else:
+                raise NotImplementedError
+
         if not os.path.exists(self.exact_solution_dir):
             raise FileNotFoundError(f'{self.exact_solution_dir} does not exist')
 
@@ -116,12 +143,19 @@ class CompareWithExact:
             logging.warning(
                 f'Failed to load exact solution at {T=}, if you are using the provided exact solution, only selected time steps are provided due to file size limitations, {e=}')
             return np.nan, np.nan
-        exact_u = self.ifft(exact_u_hat, max_N=self.points_per_dim).ravel()
+
+        if self.config.boundary:
+            exact_u = self.resample_and_convert_to_cartesian(exact_u_hat, max_N=self.points_per_dim).ravel()
+        else:
+            exact_u = self.ifft(exact_u_hat, max_N=self.points_per_dim).ravel()
+
         var_state_u = var_state.evaluate(self.xs).squeeze(0)
         abs_err = jnp.linalg.norm(exact_u - var_state_u)
         rel_err = abs_err / jnp.linalg.norm(exact_u)
         return abs_err.item() / self.points_per_dim * (
                 2 * jnp.pi) ** 2, rel_err.item()  # points_per_dim is the same as sqrt(N)
+
+
 
     def ifft(self, x_hat, max_N):
         """Compute the inverse fourier transform of the given fourier coefficients"""
@@ -137,11 +171,48 @@ class CompareWithExact:
         x = jnp.fft.ifft2(x_hat, norm='forward')
         return x
 
+    def resample_and_convert_to_cartesian(self, u_hat, max_N):
+        """Resample u_hat to match max_N resolution and convert to Cartesian coordinates within the unit disk."""
+        # Original polar grid
+        r_original = jnp.linspace(1 / u_hat.shape[0], 1, u_hat.shape[0])  # Avoid r=0 by starting slightly above zero
+        theta_original = jnp.linspace(0, 2 * jnp.pi, u_hat.shape[1], endpoint=False)
+
+        # Define the interpolator on the original polar grid
+        interpolator = RegularGridInterpolator((r_original, theta_original), u_hat, method='linear', bounds_error=False,
+                                               fill_value=0)
+
+        # Resampled polar grid with max_N points in each dimension
+        r_resampled = jnp.linspace(1 / max_N, 1, max_N)  # New radial grid with max_N points
+        theta_resampled = jnp.linspace(0, 2 * jnp.pi, max_N, endpoint=False)  # New angular grid with max_N points
+        R_resampled, Theta_resampled = jnp.meshgrid(r_resampled, theta_resampled, indexing='ij')
+
+        # Prepare points for interpolation in (r, theta) format
+        resampled_polar_points = jnp.column_stack((R_resampled.ravel(), Theta_resampled.ravel()))
+
+        # Perform interpolation in polar coordinates
+        u_hat_resampled_flat = interpolator(resampled_polar_points)
+        u_hat_resampled = u_hat_resampled_flat.reshape(max_N, max_N)
+
+        # Convert the resampled polar grid to Cartesian coordinates
+        X_resampled = R_resampled * jnp.cos(Theta_resampled)
+        Y_resampled = R_resampled * jnp.sin(Theta_resampled)
+        cartesian_points_resampled = jnp.column_stack((X_resampled.ravel(), Y_resampled.ravel()))
+
+        return u_hat_resampled
+
+def boundary_target_func(boundary_samples):
+    # Assume the target is a constant, e.g., zero on the boundary
+    return jnp.zeros(boundary_samples.shape[0])
+
 
 def euler_step(config, fiters, T, step, dt, var_state_new, var_state_old, var_state_temps, pde_operator, policy_grad, policy_grad2):
     var_state_old.set_state(var_state_new.get_state())
     samples, _, sqrt_weights = var_state_old.sampler.sample(start=0)
+    if config.boundary:
+        boundary_samples, _, boundary_sqrt_weights = var_state_old.boundary_sampler.sample(start=0)
+        boundary_target = boundary_target_func(boundary_samples)
     final_losses = []
+
 
     # first train var_state_temp0
     stage = 0
@@ -151,6 +222,14 @@ def euler_step(config, fiters, T, step, dt, var_state_new, var_state_old, var_st
     u_target = u_old + u_old_dot * float(dt)
     for iter in range(config.nb_iters_per_step + 2):
         reward, loss = loss_func(var_state_new, samples, sqrt_weights, u_target)
+        if config.boundary:
+            boundary_reward, boundary_loss = loss_func(var_state_new, boundary_samples, boundary_sqrt_weights,
+                                                       boundary_target)
+
+            total_loss = loss + config.boundary_loss_weight * boundary_loss
+            boundary_reward = jnp.mean(boundary_reward)  # or jnp.sum(boundary_reward)
+            total_reward = reward + config.boundary_loss_weight * boundary_reward
+
         update, info = (policy_grad if iter == 0 else policy_grad2)(samples=samples, sqrt_weights=sqrt_weights,
                                                                     rewards=reward, var_state=var_state_new,
                                                                     resample_params=True)
@@ -267,22 +346,28 @@ def main():
     net = SimplePDENet3(width=40, depth=7, period=jnp.pi * 2)
 
     # the var_states can share the same sampler in this case
-    sampler = PeriodicQuadratureSampler(nb_sites=2, nb_samples=config.nb_samples, minvals=0.,
-                                        maxvals=jnp.pi * 2, quad_rule='trapezoid', rand_seed=config.sampler_seed)
+    if config.boundary:
+        sampler = DiskSampler(nb_samples=config.nb_samples, radius=1.0, quad_rule=None, rand_seed=config.sampler_seed)
+        boundary_sampler = CircleSampler(nb_samples=config.nb_samples_boundary, radius=1.0, quad_rule=None,
+                                         rand_seed=config.sampler_seed)
+    else:
+        sampler = PeriodicQuadratureSampler(nb_sites=2, nb_samples=config.nb_samples, minvals=0.,
+                                            maxvals=jnp.pi * 2, quad_rule='trapezoid', rand_seed=config.sampler_seed)
+        boundary_sampler = None
 
     # define the var_state
     # we need to define multiple copies of the var_state for the intermediate results of heun's method
     # the net can be shared because it is just a pure function, which will not cause any issue
 
-    var_state_new = SimpleVarStateReal(net=net, system_shape=(2,), sampler=sampler,
+    var_state_new = SimpleVarStateReal(net=net, system_shape=(2,), sampler=sampler, boundary_sampler=boundary_sampler,
                                        init_seed=config.model_seed)
-    var_state_old = SimpleVarStateReal(net=net, system_shape=(2,), sampler=sampler,
+    var_state_old = SimpleVarStateReal(net=net, system_shape=(2,), sampler=sampler, boundary_sampler=boundary_sampler,
                                        init_seed=config.model_seed)
     # temporary var_states for storing the intermediate results of heun's method
     var_state_temps = []
     if config.integrator == 'heun':
         for _ in range(1):
-            var_state_temps.append(SimpleVarStateReal(net=net, system_shape=(2,), sampler=sampler,
+            var_state_temps.append(SimpleVarStateReal(net=net, system_shape=(2,), sampler=sampler, boundary_sampler=boundary_sampler,
                                                       init_seed=config.model_seed))
 
     # load model state if needed

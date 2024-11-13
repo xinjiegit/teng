@@ -124,7 +124,7 @@ class SimpleVarStateReal(AbstractVarState):
     parameters must also be real valued
     """
 
-    def __init__(self, net, system_shape, sampler, init_seed=1234, init_sample=None):
+    def __init__(self, net, system_shape, sampler, boundary_sampler=None, init_seed=1234, init_sample=None):
         """
         batch_size: the batch_size used for sampling
         sampler: a sampler that samples from (normalized) |psi|^2
@@ -137,6 +137,7 @@ class SimpleVarStateReal(AbstractVarState):
         # consider creating a new instance to change anything
 
         self.sampler = sampler
+        self.boundary_sampler = boundary_sampler
         assert isinstance(self.sampler, AbstractSampler)
 
         # initialize the network
@@ -153,6 +154,11 @@ class SimpleVarStateReal(AbstractVarState):
             net=net, system_shape=system_shape, param_unravel_func=param_unravel_func)
 
         self.sampler.set_var_state(self)  # pass self to sampler so sampler knows how to sample
+
+        if self.boundary_sampler:
+            self.boundary_sampler.set_var_state(self)
+
+        self.active_sampler = self.sampler
 
     # we can access them, but we cannot set them
     @property
