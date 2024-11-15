@@ -99,12 +99,12 @@ def loss_func(var_state, samples, sqrt_weights, u_target):
 
 
 class CompareWithExact:
-    def __init__(self, points_per_dim=512, config=None):
+    def __init__(self, points_per_dim=5, config=None):
 
         self.config = config
         self.points_per_dim = points_per_dim
         if config.boundary:
-            radii = jnp.linspace(1 / points_per_dim, 1, points_per_dim)
+            radii = jnp.linspace(0, 1, points_per_dim)
             angles = jnp.linspace(0, 2 * jnp.pi, points_per_dim, endpoint=False)
             r_grid, theta_grid = jnp.meshgrid(radii, angles, indexing='ij')
 
@@ -113,6 +113,8 @@ class CompareWithExact:
 
             grid2d = jnp.stack((x_grid, y_grid), axis=-1).reshape(1, -1, 2)
             self.xs = grid2d
+            print("Grid points in Cartesian coordinates (self.xs):", self.xs)
+
         else:
             grid = jnp.linspace(0, 2 * jnp.pi, points_per_dim, endpoint=False)
             grid2d = jnp.stack(jnp.meshgrid(grid, grid, indexing='ij'), axis=-1).reshape(1, -1, 2)
@@ -145,7 +147,8 @@ class CompareWithExact:
             return np.nan, np.nan
 
         if self.config.boundary:
-            exact_u = self.resample_and_convert_to_cartesian(exact_u_hat, max_N=self.points_per_dim).ravel()
+            exact_u = exact_u_hat.ravel()
+            # exact_u = self.resample_and_convert_to_cartesian(exact_u_hat, max_N=self.points_per_dim).ravel()
         else:
             exact_u = self.ifft(exact_u_hat, max_N=self.points_per_dim).ravel()
 
@@ -223,16 +226,17 @@ def euler_step(config, fiters, T, step, dt, var_state_new, var_state_old, var_st
     for iter in range(config.nb_iters_per_step + 2):
         reward, loss = loss_func(var_state_new, samples, sqrt_weights, u_target)
         if config.boundary:
-            dx = jnp.zeros((1, 20))  # set dx =0 at initial time
-            u_target = jnp.concatenate([u_target, dx], axis=1)
-
-            boundary_reward, boundary_loss = loss_func(var_state_new, boundary_samples, boundary_sqrt_weights,
-                                                       boundary_target)
-            loss = loss + config.boundary_loss_weight * boundary_loss
-
-            samples = jnp.concatenate([samples, boundary_samples], axis=1)
-            sqrt_weights = jnp.concatenate([sqrt_weights, boundary_sqrt_weights], axis=1)
-            reward = jnp.concatenate([reward, boundary_reward], axis=1)
+            # dx = jnp.zeros((1, 20))  # set dx =0 at initial time
+            # u_target = jnp.concatenate([u_target, dx], axis=1)
+            #
+            # boundary_reward, boundary_loss = loss_func(var_state_new, boundary_samples, boundary_sqrt_weights,
+            #                                            boundary_target)
+            # loss = loss + config.boundary_loss_weight * boundary_loss
+            #
+            # samples = jnp.concatenate([samples, boundary_samples], axis=1)
+            # sqrt_weights = jnp.concatenate([sqrt_weights, boundary_sqrt_weights], axis=1)
+            # reward = jnp.concatenate([reward, boundary_reward], axis=1)
+            pass
 
         update, info = (policy_grad if iter == 0 else policy_grad2)(samples=samples, sqrt_weights=sqrt_weights,
                                                                     rewards=reward, var_state=var_state_new,
